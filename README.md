@@ -1,5 +1,6 @@
 # CODAVI
 [![](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://github.com/manucabral/COVID-19-Davi/blob/main/LICENSE)
+[![nbviewer](https://img.shields.io/badge/jupyter_notebooks-nbviewer-purple.svg?style=flat-square)](https://nbviewer.jupyter.org/github/manucabral/CoDavi/blob/main/DOSIS1-MasculineAndFeminineComparative.ipynb)
 
 A simple data visualization of COVID-19 vaccination on Argentina.
 
