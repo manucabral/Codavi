@@ -1,8 +1,5 @@
-import pandas as pd
-import zipfile
-import os
-
 from urllib.request import urlopen
+import zipfile
 import shutil
 import os
 
@@ -24,5 +21,18 @@ if not os.path.isfile('./datos_nomivac_covid19.csv'):
 
 print("Datos descargandos correctamente.")
 
-data = pd.read_csv('datos_nomivac_covid19.csv')
-dosis = data.loc[(data['orden_dosis'] == 1), 'vacuna']
+#   columns ->
+
+# 	sexo
+#   grupo_etario
+# 	jurisdiccion_residencia
+# 	jurisdiccion_residencia_id
+# 	depto_residencia
+# 	depto_residencia_id
+# 	jurisdiccion_aplicacion
+# 	jurisdiccion_aplicacion_id
+# 	depto_aplicacion
+# 	depto_aplicacion_id	fecha_aplicacion
+# 	vacuna
+# 	condicion_aplicacion
+# 	orden_dosis	lote_vacuna
