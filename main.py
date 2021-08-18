@@ -3,36 +3,51 @@ import zipfile
 import shutil
 import os
 
-url = 'https://sisa.msal.gov.ar/datos/descargas/covid-19/files/datos_nomivac_covid19.zip'
-zip = 'datos_nomivac_covid19.zip'
+# Ubicación de los datasets oficiales del gobierno.
+URL_DATASET = 'https://sisa.msal.gov.ar/datos/descargas/covid-19/files/'
 
-if not os.path.isfile('./datos_nomivac_covid19.csv'):
+# Archivo que contiene las vacunaciones.
+VACUNACION_ARCHIVO = 'datos_nomivac_covid19'
 
-    print("Extrayendo archivo comprimido..")
-    with urlopen(url) as response, open(zip, 'wb') as salida:
-        shutil.copyfileobj(response, salida)
+# Archivo que contiene los casos.
+CASOS_ARCHIVO = 'Covid19Casos'
 
-        # extrayendo del comprimido el archivo csv
-        with zipfile.ZipFile(zip) as zf:
-            zf.extract('datos_nomivac_covid19.csv')
+def existeArchivo(nombreArchivo):
+    return os.path.isfile('./' + nombreArchivo + '.csv')
 
-    print("Eliminando archivo comprimido..")
-    os.remove('datos_nomivac_covid19.zip')
+def descargarArchivo(nombreArchivo):
 
-print("Datos descargandos correctamente.")
+    comprimido = nombreArchivo + '.zip'
+    csv = nombreArchivo + '.csv'
 
-#   columns ->
+    print('Iniciando descarga del archivo', comprimido)
+    with urlopen(URL_DATASET + comprimido) as respuesta, open(comprimido, 'wb') as salida:
 
-# 	sexo
-#   grupo_etario
-# 	jurisdiccion_residencia
-# 	jurisdiccion_residencia_id
-# 	depto_residencia
-# 	depto_residencia_id
-# 	jurisdiccion_aplicacion
-# 	jurisdiccion_aplicacion_id
-# 	depto_aplicacion
-# 	depto_aplicacion_id	fecha_aplicacion
-# 	vacuna
-# 	condicion_aplicacion
-# 	orden_dosis	lote_vacuna
+        print('Copiando', comprimido, 'en el directorio..')
+        shutil.copyfileobj(respuesta, salida)
+
+        print('Extrayendo', csv, 'del archivo comprimido..')
+        with zipfile.ZipFile(comprimido) as archivoComprimido:
+            archivoComprimido.extract(csv)
+
+    print('Eliminado', comprimido, 'del directorio..')
+    os.remove(comprimido)
+
+    return print('Archivo', csv, 'descargado correctamente en el directorio.')
+
+
+if __name__ == "__main__":
+
+    try:
+        if not existeArchivo(VACUNACION_ARCHIVO):
+            descargarArchivo(VACUNACION_ARCHIVO)
+        else:
+            print('Archivo encontrado:', VACUNACION_ARCHIVO)
+
+        if not existeArchivo(CASOS_ARCHIVO):
+            descargarArchivo(CASOS_ARCHIVO)
+        else:
+            print('Archivo encontrado:', CASOS_ARCHIVO)
+
+    except ValueError:
+        print('Ocurrio un error al descargar los archivos: ', ValueError)
