@@ -3,7 +3,7 @@
 [![nbviewer](https://img.shields.io/badge/jupyter_notebook-nbviewer-black.svg?style=flat-square)](https://nbviewer.jupyter.org/github/manucabral/Codavi/blob/main/Vacunación/DOSIS1-MasculineAndFeminineComparative.ipynb)
 [![Python 3.6](https://img.shields.io/badge/python-3.9.1-blue.svg)](https://www.python.org/downloads/release/python-360/)
 
-Visualización y estadísticas sobre el COVID-19 en la Argentina, partiendo de infectados hasta muertes registradas.
+Visualización y estadísticas sobre el COVID-19 en toda la Argentina.
 
 ## Contiene
 - [Vacunación](https://github.com/manucabral/Codavi/tree/main/Vacunación)
