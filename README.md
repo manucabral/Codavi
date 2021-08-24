@@ -3,11 +3,12 @@
 [![nbviewer](https://img.shields.io/badge/jupyter_notebook-nbviewer-black.svg?style=flat-square)](https://nbviewer.jupyter.org/github/manucabral/Codavi/blob/main/Vacunación/DOSIS1-MasculineAndFeminineComparative.ipynb)
 [![Python 3.6](https://img.shields.io/badge/python-3.9.1-blue.svg)](https://www.python.org/downloads/release/python-360/)
 
-Visualización y estadísticas sobre el COVID-19 en la Argentina, partiendo de infectados hasta muertes registradas.
+Visualización y estadísticas sobre el COVID-19 en toda la Argentina.
 
 ## Contiene
 - [Vacunación](https://github.com/manucabral/Codavi/tree/main/Vacunación)
   - [Comparación entre hombres y mujeres](https://github.com/manucabral/Codavi/blob/main/Vacunación/DOSIS1-MasculineAndFeminineComparative.ipynb)
+  - [Cantidad de vacunados por grupo etario](https://github.com/manucabral/Codavi/blob/main/Vacunación/DOSIS1-GrupoEtarioComparativa.ipynb)
 
 ## Fuente de datos
 Todos los análisis y comparativas estan basados de los datos que provee el gobierno Argentino sobre el virus, estos datos lo puedes descargar [aquí](https://datos.gob.ar/dataset/salud-vacunas-contra-covid-19-dosis-aplicadas-republica-argentina---registro-desagregado).
