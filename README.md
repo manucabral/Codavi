@@ -8,8 +8,8 @@ Visualización y estadísticas sobre el COVID-19 en toda la Argentina.
 ## Contiene
 - [Vacunación](https://github.com/manucabral/Codavi/tree/main/Vacunación)
   - [Primera dosis](https://github.com/manucabral/Codavi/tree/main/Vacunación/Primera%20dosis)
-    - [Comparación entre hombres y mujeres](https://github.com/manucabral/Codavi/blob/main/Vacunación/DOSIS1-MasculineAndFeminineComparative.ipynb)
-    - [Cantidad de vacunados por grupo etario](https://github.com/manucabral/Codavi/blob/main/Vacunación/DOSIS1-GrupoEtarioComparativa.ipynb)
+    - [Comparación entre hombres y mujeres](https://github.com/manucabral/Codavi/blob/main/Vacunación/Primera%20dosis/DOSIS1-MasculineAndFeminineComparative.ipynb)
+    - [Cantidad de vacunados por grupo etario](https://github.com/manucabral/Codavi/blob/main/Vacunación/Primera%20dosis/DOSIS1-GrupoEtarioComparativa.ipynb)
     - [Cantidad de vacunas aplicadas por marca](https://github.com/manucabral/Codavi/blob/main/Vacunación/Primera%20dosis/DOSIS1-VacunasAplicadas.ipynb)
 
 ## Fuente de datos
