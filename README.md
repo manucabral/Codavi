@@ -11,7 +11,6 @@ Visualización y estadísticas sobre el COVID-19 en toda la Argentina.
     - [Comparación entre hombres y mujeres](https://github.com/manucabral/Codavi/blob/main/Vacunación/Primera%20dosis/DOSIS1-MasculineAndFeminineComparative.ipynb)
     - [Cantidad de vacunados por grupo etario](https://github.com/manucabral/Codavi/blob/main/Vacunación/Primera%20dosis/DOSIS1-GrupoEtarioComparativa.ipynb)
     - [Cantidad de vacunas aplicadas por marca](https://github.com/manucabral/Codavi/blob/main/Vacunación/Primera%20dosis/DOSIS1-VacunasAplicadas.ipynb)
-
 ## Fuente de datos
 Todos los análisis y comparativas estan basados de los datos que provee el gobierno Argentino sobre el virus, estos datos lo puedes descargar [aquí](https://datos.gob.ar/dataset/salud-vacunas-contra-covid-19-dosis-aplicadas-republica-argentina---registro-desagregado).
 
@@ -21,6 +20,7 @@ Los datos son actualizados diariamente o semanalmente por el mismo gobierno del 
 - Python 3.9.1 (o una versión más reciente)
 - Pandas
 - Matplotlib
+- Flask
 
 ## Uso
 Clonar y ejecutar el archivo main.py, o también puedes usar Jupyter Notebook para la visualización de datos.
@@ -31,3 +31,10 @@ python main.py
 ```
 Ten en cuenta que Codavi descargará los datos y luego los eliminará, esto tomará poco tiempo.
 
+### API
+También encontraras la API de Codavi.
+```
+cd Codavi/api
+python wsgi.py
+```
+Una vez ejecutada está se alojará en [localhost:5000](http://localhot:5000)
