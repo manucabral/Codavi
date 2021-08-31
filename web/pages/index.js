@@ -1,7 +1,47 @@
-import useSwr from "swr";
 import styled from "styled-components";
+import Card from "../components/Card";
 
 const fetcher = (url) => fetch(url).then((res) => res.json());
+
+export default function Home({ vacunas }) {
+  return (
+    <Main>
+      <Container>
+        <Title>CODAVI</Title>
+        <Description>
+          Visualización y estadísticas sobre el COVID-19 en toda la Argentina.
+        </Description>
+      </Container>
+      <Subcontainer>
+        <Content>
+          <Card
+            title="Comparativa por vacunas"
+            description="Cantidad vacunas aplicadas por marca solamente la primera dosis."
+            data={Object.values(vacunas["comparativaVacunas"])}
+          />
+        </Content>
+      </Subcontainer>
+    </Main>
+  );
+}
+
+export async function getStaticProps(context) {
+  const res = await fetch(`https://codavi.herokuapp.com/covid`);
+  const vacunas = await res.json();
+
+  if (!vacunas) {
+    return {
+      redirect: {
+        destination: "/",
+        permanent: vacunas,
+      },
+    };
+  }
+
+  return {
+    props: { vacunas },
+  };
+}
 
 const Main = styled.div`
   text-align: center;
@@ -11,7 +51,7 @@ const Main = styled.div`
   background-color: ${({ theme }) => theme.backgrounds.primary};
 `;
 
-const Content = styled.div`
+const Container = styled.div`
   display: flex;
   padding: 1rem;
 
@@ -21,20 +61,26 @@ const Content = styled.div`
   background-color: ${({ theme }) => theme.backgrounds.secondary};
 `;
 
+const Subcontainer = styled.div`
+  display: flex;
+  padding: 1rem;
+
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  background-color: ${({ theme }) => theme.backgrounds.primary};
+`;
+
 const Title = styled.h1`
   font-size: 64px;
   color: #e80000;
-`;
-
-const Subtitle = styled.h2`
-  color: ${({ theme }) => theme.colors.primary};
 `;
 
 const Description = styled.p`
   color: ${({ theme }) => theme.colors.secondary};
 `;
 
-const ContentStats = styled.p`
+const Content = styled.div`
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -47,45 +93,3 @@ const ContentStats = styled.p`
     flex-wrap: wrap;
   }
 `;
-
-const Item = styled.p`
-  padding: 1rem;
-  &:hover {
-    cursor: pointer;
-    background-color: ${({ theme }) => theme.backgrounds.secondary};
-  }
-  //border: 2px solid #e80000;
-`;
-
-export default function Home() {
-  const { data, error } = useSwr("/api/covid", fetcher);
-
-  if (error) return <Title>Error al cargar.</Title>;
-  if (!data) return <Title>Cargando..</Title>;
-
-  return (
-    <Main>
-      <Content>
-        <Title>CODAVI</Title>
-        <Description>
-          Visualización y estadísticas sobre el COVID-19 en toda la Argentina.
-        </Description>
-      </Content>
-      <ContentStats>
-        <Item>
-          <Subtitle>Mujeres vs Hombres</Subtitle>
-          <Description>
-            Cantidad de vacunados por género solamente en la primera dosis.
-          </Description>
-        </Item>
-        <Item>
-          <Subtitle>Comparativa de vacunas</Subtitle>
-          <Description>
-            Cantidad aplicada de cada vacuna (marca) en la primera dosis.
-          </Description>
-          <Title>54950</Title>
-        </Item>
-      </ContentStats>
-    </Main>
-  );
-}
