@@ -22,6 +22,11 @@ Los datos son actualizados diariamente o semanalmente por el mismo gobierno del 
 - Matplotlib
 - Flask
 
+### Instalar requerimientos
+```
+pip install 'nombre'
+```
+
 ## Uso
 Clonar y ejecutar el archivo main.py, o también puedes usar Jupyter Notebook para la visualización de datos.
 ```
