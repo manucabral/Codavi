@@ -7,9 +7,6 @@ const SESSION_FILE_PATH = "./session.json";
 let client;
 let session_data;
 
-/**
- * Inicializa el cliente con la sessión registrada.
- */
 const initWithSession = () => {
   console.log("Validando sesion con whatsapp..");
   session_data = require(SESSION_FILE_PATH);
@@ -29,9 +26,6 @@ const initWithSession = () => {
   client.initialize();
 };
 
-/**
- * Inicializa el cliente con una nueva sesión y genera un código QR.
- */
 const initWithoutSession = () => {
   console.log("Iniciando una nueva sesion..");
   client = new Client();
@@ -59,23 +53,13 @@ const initWithoutSession = () => {
   client.initialize();
 };
 
-/**
- * Escucha mensajes entrantes.
- */
 const listenMessage = () => {
   client.on("message", async (msg) => {
     const { from, to, body } = msg;
-    console.log(from, body);
-    sendMessage(from, "¡Hola soy Codavi!");
+    sendMessage(from, "¡Hola soy Codavi!\nEstoy todavía en desarrollo 🕦");
   });
 };
 
-/**
- * Envia un mensaje a un usuario.
- *
- * @param {*} to destinatario (identificador)
- * @param {*} text mensaje a enviar
- */
 const sendMessage = (to, text) => {
   client.sendMessage(to, text);
 };
