@@ -17,7 +17,6 @@ Visualización y estadísticas sobre el COVID-19 en toda la Argentina.
 
 ## Fuente de datos
 Todos los análisis y comparativas estan basados de los datos que provee el gobierno Argentino sobre el virus, estos datos lo puedes descargar [aquí](https://datos.gob.ar/dataset/salud-vacunas-contra-covid-19-dosis-aplicadas-republica-argentina---registro-desagregado).
-
 Los datos son actualizados diariamente o semanalmente por el mismo gobierno del país.
 
 ## Requerimientos
@@ -47,3 +46,19 @@ cd Codavi/api
 python wsgi.py
 ```
 Una vez ejecutada está se alojará en [localhost:5000](http://localhot:5000)
+
+### Desplegar en Heroku :rocket:
+Para desplegarlo en heroku necesitas generar el archivo _requeriments.txt_ y _Procfile_.
+
+Configuración de requeriments.
+```
+pandas==1.3.2
+Flask==2.0.1
+Flask-RESTful==0.3.9
+gunicorn==20.1.0
+```
+
+Configuración de Procfile.
+```
+web: gunicorn -b :$PORT wsgi:app
+```
