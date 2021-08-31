@@ -3,7 +3,8 @@ import Head from "next/head";
 
 const GlobalStyle = createGlobalStyle`
   body {
-     margin: 0;
+    overflow-y: auto;
+    margin: 0;
     padding: 0;
     font-family: 'News Cycle', sans-serif;
     box-sizing: border-box;
