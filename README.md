@@ -7,6 +7,7 @@
 [![Python 3.6](https://img.shields.io/badge/python-3.9.1-blue.svg)](https://www.python.org/downloads/release/python-360/)
 [![React](https://img.shields.io/badge/React-16.8.6-blue)](https://es.reactjs.org/)
 [![Node](https://img.shields.io/badge/Node-14.15.3-00610d.svg)](https://nodejs.org/es/)
+
 ![issues](https://img.shields.io/github/issues/manucabral/Codavi)
 ![activity](https://img.shields.io/github/commit-activity/w/manucabral/Codavi)
 ![contributors](https://img.shields.io/github/contributors/manucabral/Codavi)
