@@ -20,6 +20,10 @@ Visualización y estadísticas sobre el COVID-19 en toda la Argentina.
     - [Comparación entre hombres y mujeres](https://github.com/manucabral/Codavi/blob/main/Vacunación/Primera%20dosis/DOSIS1-MasculineAndFeminineComparative.ipynb)
     - [Cantidad de vacunados por grupo etario](https://github.com/manucabral/Codavi/blob/main/Vacunación/Primera%20dosis/DOSIS1-GrupoEtarioComparativa.ipynb)
     - [Cantidad de vacunas aplicadas por marca](https://github.com/manucabral/Codavi/blob/main/Vacunación/Primera%20dosis/DOSIS1-VacunasAplicadas.ipynb)
+  - [Segunda dosis](https://github.com/manucabral/Codavi/tree/main/Vacunación/Segunda%20dosis)
+    - [Comparación entre hombres y mujeres](https://github.com/manucabral/Codavi/blob/main/Vacunación/Segunda%20dosis/DOSIS2-MasculineAndFeminineComparative.ipynb)
+    - [Cantidad de vacunados por grupo etario](https://github.com/manucabral/Codavi/blob/main/Vacunación/Segunda%20dosis/DOSIS2-GrupoEtarioComparativa.ipynb)
+    - [Cantidad de vacunas aplicadas por marca](https://github.com/manucabral/Codavi/blob/main/Vacunación/Segunda%20dosis/DOSIS2-VacunasAplicadas.ipynb)
 
 ## Fuente de datos
 Todos los análisis y comparativas estan basados de los datos que provee el gobierno Argentino sobre el virus, estos datos lo puedes descargar [aquí](https://datos.gob.ar/dataset/salud-vacunas-contra-covid-19-dosis-aplicadas-republica-argentina---registro-desagregado).
