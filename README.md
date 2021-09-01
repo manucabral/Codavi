@@ -13,6 +13,8 @@
 [![Express](https://img.shields.io/badge/-express-black?style=for-the-badge&logo=express)](https://expressjs.com/es/)
 [![Node](https://img.shields.io/badge/-Node-black?style=for-the-badge&logo=Node.js)](https://nodejs.org/es/)
 [![Figma](https://img.shields.io/badge/-Figma-white?style=for-the-badge&logo=figma)](https://figma.com/)
+
+<br>
 Visualización y estadísticas sobre el COVID-19 en toda la Argentina.
 
 ## Contiene
