@@ -4,12 +4,15 @@
   "description": "a whatsapp bot",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node index"
+      "start": "node index",
+      "dev": "nodemon index.js"
   },
-  "author": "ne0de",
+  "author": "Codavi",
   "dependencies": {
-    "qrcode-terminal": "^0.12.0",
-    "whatsapp-web.js": "^1.14.0"
+      "node-fetch": "^2.6.1",
+      "node-localstorage": "^2.2.1",
+      "nodemon": "^2.0.12",
+      "qrcode-terminal": "^0.12.0",
+      "whatsapp-web.js": "^1.14.0"
   }
 }
