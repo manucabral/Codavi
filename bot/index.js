@@ -1,7 +1,8 @@
 const { Client } = require("whatsapp-web.js");
 const qrcode = require("qrcode-terminal");
 const fs = require("fs");
-
+const fetch = require("node-fetch");
+let menu = 0;
 const SESSION_FILE_PATH = "./session.json";
 
 let client;
@@ -36,7 +37,6 @@ const initWithoutSession = () => {
 
   client.on("ready", () => {
     console.log("Listo");
-    connectionReady();
   });
 
   client.on("auth_failure", () => {
@@ -54,11 +54,40 @@ const initWithoutSession = () => {
 };
 
 const listenMessage = () => {
-  client.on("message", async (msg) => {
+  client.on("message_create", async (msg) => {
     const { from, to, body } = msg;
-    sendMessage(from, "¡Hola soy Codavi!\nEstoy todavía en desarrollo 🕦");
+    var opt = body
+    console.log(body)
+    if (opt === "Codavi") {
+      menu = 1
+      return sendMessage(to, "¡Hola soy Codavi!\nElegi una vacuna para saber los datos:\n-'Sputnik'\n-'Astrazeneca'\n-'Sinopharm'\n-'Covishield',\n-'Moderna'")
+    }
+    if (menu === 1){
+      console.log("Entro al menu")
+      console.log(opt)
+      const vaccineInfo = await getVaccineInfo()
+      const availableOptions = Object.values(vaccineInfo["comparativaVacunas"]).map(vaccine => {
+        return vaccine.subtitle
+      })
+      if(availableOptions.includes(opt)){
+        const vaccine = Object.values(vaccineInfo["comparativaVacunas"]).find(vaccine => {
+          return vaccine.subtitle === opt
+        })
+        sendMessage(to, "Los vacunados con " + opt + " son: " + vaccine.total)
+      }
+      menu = 0
+    }
   });
 };
+
+const getVaccineInfo = async () => {
+  const res = await fetch(`https://codavi.herokuapp.com/covid`);
+  const vacunas = await res.json();
+  if (!vacunas) {
+    console.log("No se pudieron extraer los datos de las vacunas")
+  }
+  return vacunas
+}
 
 const sendMessage = (to, text) => {
   client.sendMessage(to, text);
