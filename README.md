@@ -5,7 +5,14 @@
 [![](https://img.shields.io/badge/License-GPLv3-red.svg)](https://github.com/manucabral/COVID-19-Davi/blob/main/LICENSE)
 [![nbviewer](https://img.shields.io/badge/jupyter_notebook-nbviewer-black.svg?style=flat-square)](https://nbviewer.jupyter.org/github/manucabral/Codavi/blob/main/Vacunación/DOSIS1-MasculineAndFeminineComparative.ipynb)
 [![Python 3.6](https://img.shields.io/badge/python-3.9.1-blue.svg)](https://www.python.org/downloads/release/python-360/)
-
+[![React](https://img.shields.io/badge/-React-black?style=for-the-badge&logo=React)](https://es.reactjs.org/)
+[![SASS](https://img.shields.io/badge/-sass-white?style=for-the-badge&logo=sass)](https://sass-lang.com/)
+[![CSS](https://img.shields.io/badge/-css-lightblue?style=for-the-badge&logo=css3)](https://developer.mozilla.org/es/docs/Web/CSS)
+[![Html](https://img.shields.io/badge/-html-black?style=for-the-badge&logo=html5)](https://developer.mozilla.org/es/docs/Web/HTML)
+[![Javascript](https://img.shields.io/badge/-Javascript-critical?style=for-the-badge&logo=Javascript)](https://developer.mozilla.org/es/docs/Web/JavaScript)
+[![Express](https://img.shields.io/badge/-express-black?style=for-the-badge&logo=express)](https://expressjs.com/es/)
+[![Node](https://img.shields.io/badge/-Node-black?style=for-the-badge&logo=Node.js)](https://nodejs.org/es/)
+[![Figma](https://img.shields.io/badge/-Figma-white?style=for-the-badge&logo=figma)](https://figma.com/)
 Visualización y estadísticas sobre el COVID-19 en toda la Argentina.
 
 ## Contiene
