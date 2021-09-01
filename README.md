@@ -12,7 +12,7 @@
 ![activity](https://img.shields.io/github/commit-activity/m/manucabral/Codavi)
 ![contributors](https://img.shields.io/github/contributors/manucabral/Codavi)
 
-**Codavi** es un servicio de visualización y estadísticas de información oficial sobre el COVID-19 de toda la Argentina.
+**Codavi** es un servicio de código abierto que trata sobre la visualización y estadísticas de información oficial sobre el COVID-19 en toda la Argentina.
 
 ## Contiene
 - Vacunación
