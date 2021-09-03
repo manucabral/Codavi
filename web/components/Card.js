@@ -38,6 +38,7 @@ const Description = styled.p`
 
 export default function Card({ title, description, data }) {
   var [values] = useState(data);
+  console.log(values);
   return (
     <MainCard>
       <Title>{title}</Title>

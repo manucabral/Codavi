@@ -23,13 +23,17 @@ export default function Home({ vacunas, gpd, gsd }) {
         <Content>
           <Card
             title={gpd["titulo"]}
-            description={gpd["descripcion"]}
-            data={Object.values(gpd["data"])}
+            description={
+              gpd["status"] === 200 ? gpd["descripcion"] : gpd["data"]
+            }
+            data={gpd["status"] === 200 ? Object.values(gpd["data"]) : []}
           />
           <Card
             title={gsd["titulo"]}
-            description={gsd["descripcion"]}
-            data={Object.values(gsd["data"])}
+            description={
+              gsd["status"] === 200 ? gsd["descripcion"] : gsd["data"]
+            }
+            data={gsd["status"] === 200 ? Object.values(gsd["data"]) : []}
           />
         </Content>
       </Subcontainer>
@@ -41,39 +45,36 @@ export default function Home({ vacunas, gpd, gsd }) {
 }
 
 export async function getStaticProps(context) {
-  const res = await fetch(`http://localhost:5000/vacunas`);
-  const resgpd = await fetch(`http://localhost:5000/genero/1`);
-  const resgsd = await fetch(`http://localhost:5000/genero/2`);
+  const res = await fetch(`https://codavi.herokuapp.com/vacunas`);
+  const resgpd = await fetch(`https://codavi.herokuapp.com/genero/1`);
+  const resgsd = await fetch(`https://codavi.herokuapp.com/genero/2`);
   const gpd = await resgpd.json();
   const gsd = await resgsd.json();
   const vacunas = await res.json();
 
-  if (!vacunas) {
+  if (!vacunas)
     return {
       redirect: {
         destination: "/",
         permanent: vacunas,
       },
     };
-  }
 
-  if (!gpd) {
+  if (!gpd)
     return {
       redirect: {
         destination: "/",
         permanent: gpd,
       },
     };
-  }
 
-  if (!gsd) {
+  if (!gsd)
     return {
       redirect: {
         destination: "/",
         permanent: gsd,
       },
     };
-  }
 
   return {
     props: { vacunas, gpd, gsd },
