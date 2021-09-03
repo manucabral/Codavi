@@ -1,29 +1,28 @@
 <div align="center">
   <h1>Codavi :bar_chart:</h1>
+  <a href="https://github.com/manucabral/COVID-19-Davi/blob/main/LICENSE"><img src="https://img.shields.io/badge/License-Apache_2.0-red.svg" alt="licence"> </a>
+  <a href="https://www.python.org/downloads/release/python-360/"><img src="https://img.shields.io/badge/python-3.9.1-blue.svg" alt="Python"> </a>
+  <a href="https://es.reactjs.org/"><img src="https://img.shields.io/badge/React-16.8.6-blue.svg" alt="React"> </a>
+  <a href="https://nodejs.org/es/"><img src="https://img.shields.io/badge/Node-14.15.3-00610d.svg" alt="Node"> </a>
+
+  <a href="https://vercel.com"><img src="https://vercelbadge.vercel.app/api/manucabral/Codavi" alt="Vercel"> </a>
+  <a href="#"><img src="https://img.shields.io/github/issues/manucabral/Codavi" alt="issues"> </a>
+  <a href="#"><img src="https://img.shields.io/github/commit-activity/m/manucabral/Codavi" alt="activity"> </a>
+  <a href="#"><img src="https://img.shields.io/github/contributors/manucabral/Codavi" alt="contributors"> </a>
 </div>
-
-[![](https://img.shields.io/badge/License-Apache_2.0-red.svg)](https://github.com/manucabral/COVID-19-Davi/blob/main/LICENSE)
-[![nbviewer](https://img.shields.io/badge/jupyter_notebook-nbviewer-black.svg?style=flat-square)](https://nbviewer.jupyter.org/github/manucabral/Codavi/blob/main/Vacunación/DOSIS1-MasculineAndFeminineComparative.ipynb)
-[![Python 3.6](https://img.shields.io/badge/python-3.9.1-blue.svg)](https://www.python.org/downloads/release/python-360/)
-[![React](https://img.shields.io/badge/React-16.8.6-blue)](https://es.reactjs.org/)
-[![Node](https://img.shields.io/badge/Node-14.15.3-00610d.svg)](https://nodejs.org/es/)
-
-![issues](https://img.shields.io/github/issues/manucabral/Codavi)
-![activity](https://img.shields.io/github/commit-activity/m/manucabral/Codavi)
-![contributors](https://img.shields.io/github/contributors/manucabral/Codavi)
 
 **Codavi** es un servicio de código abierto que trata sobre la visualización y estadísticas de información oficial sobre el COVID-19 en toda la Argentina.
 
 ## Contiene
 - Vacunación
   - Comparación entre hombres y mujeres vacunados
-    - [Primera dosis](https://github.com/manucabral/Codavi/blob/main/data/Primera%20dosis/DOSIS1-MasculineAndFeminineComparative.ipynb) / [Segunda dosis](https://github.com/manucabral/Codavi/blob/main/data/Segunda%20dosis/DOSIS2-MasculineAndFeminineComparative.ipynb)
+    - [Primera dosis](https://nbviewer.jupyter.org/github/manucabral/Codavi/blob/main/data/Primera%20dosis/DOSIS1-MasculineAndFeminineComparative.ipynb) / [Segunda dosis](https://nbviewer.jupyter.org/github/manucabral/Codavi/blob/main/data//Segunda%20dosis/DOSIS2-MasculineAndFeminineComparative.ipynb)
   
   - Cantidad de vacunados por grupo etario
-    - [Primera dosis](https://github.com/manucabral/Codavi/blob/main/data/Primera%20dosis/DOSIS1-GrupoEtarioComparativa.ipynb) / [Segunda dosis](https://github.com/manucabral/Codavi/blob/main/data/Segunda%20dosis/DOSIS2-GrupoEtarioComparativa.ipynb)
+    - [Primera dosis](https://nbviewer.jupyter.org/github/manucabral/Codavi/blob/main/data/Primera%20dosis/DOSIS1-GrupoEtarioComparativa.ipynb) / [Segunda dosis](https://nbviewer.jupyter.org/github/manucabral/Codavi/blob/main/data/Segunda%20dosis/DOSIS2-GrupoEtarioComparativa.ipynb)
   
   - Cantidad de vacunas aplicadas por marca
-    - [Primera dosis](https://github.com/manucabral/Codavi/blob/main/data/Primera%20dosis/DOSIS1-VacunasAplicadas.ipynb) / [Segunda dosis](https://github.com/manucabral/Codavi/blob/main/data/Segunda%20dosis/DOSIS2-VacunasAplicadas.ipynb)
+    - [Primera dosis](https://nbviewer.jupyter.org/github/manucabral/Codavi/blob/main/data/Primera%20dosis/DOSIS1-VacunasAplicadas.ipynb) / [Segunda dosis](https://nbviewer.jupyter.org/github/manucabral/Codavi/blob/main/data/Segunda%20dosis/DOSIS2-VacunasAplicadas.ipynb)
 - Casos
   - Comparativa de casos por género
 
