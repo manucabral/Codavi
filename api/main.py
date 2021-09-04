@@ -6,6 +6,7 @@ from datetime import datetime
 app = Flask(__name__)
 FECHA_ACTUAL = datetime.now().date().isoformat()
 
+
 def obtenerDatosVacuna():
     try:
         url = 'https://sisa.msal.gov.ar/datos/descargas/covid-19/files/Covid19VacunasAgrupadas.csv.zip'
@@ -14,33 +15,54 @@ def obtenerDatosVacuna():
         print('Hubo un error al leer el dataset', Error)
     return data
 
+
 def obtenerDatosGenero(dosis):
     try:
         cnx = mysql.connector.connect(
-            host="",
+            host="desconocido",
             port=3306,
-            user="",
-            password="",
-            db=""
+            user="desconocido",
+            password="desconocido",
+            db="desconocido"
         )
         cursor = cnx.cursor()
     except Exception:
-        return "No hay datos"
+        return {
+            "status": 204,
+            "titulo": f"Comparativa por género dosis {dosis}",
+            "data": "No hay datos"}
 
     query = (
-        f"SELECT masculino, femenino, fecha FROM `alex`.`generos` WHERE dosis = '{dosis}' and fecha = '{FECHA_ACTUAL}';")
+        f"SELECT masculino, femenino, fecha FROM `x3lh5zri57nk7is6`.`generos` WHERE dosis = '{dosis}' and fecha = '{FECHA_ACTUAL}';")
     cursor.execute(query)
     result = cursor.fetchall()
+
     if len(result) == 0:
-        return "No hay datos"
+        return {
+            "status": 204,
+            "titulo": f"Comparativa por género dosis {dosis}",
+            "data": "No hay datos actualizados para hoy."}
+    
     cantidadMasculino, cantidadFemenino, fecha = result[0]
     cursor.close()
     cnx.close()
+    
     return {
-        "masculino": int(cantidadMasculino),
-        "femenino": int(cantidadFemenino),
-        "dosis": f"{dosis}",
+        "status": 200,
+        "titulo": f"Comparativa por género dosis {dosis}",
+        "descripcion": f'Cantidad de vacunados por género en la DOSIS {dosis}',
         "fecha": str(fecha),
+        "dosis": f"{dosis}",
+        "data": {
+            "masculino": {
+                "nombre": "Masculino",
+                "total": int(cantidadMasculino),
+            },
+            "femenino": {
+                "nombre": "Femenino",
+                "total": int(cantidadFemenino)
+            }
+        }
     }
 
 
@@ -48,9 +70,11 @@ def obtenerDatosGenero(dosis):
 def page_not_found(e):
     return "La ruta que buscas no existe."
 
+
 @app.route('/', methods=['GET'])
 def index():
     return "Bienvenido a la API de Codavi."
+
 
 @app.route('/vacunas', methods=['GET'])
 def vacunas():
@@ -67,25 +91,28 @@ def vacunas():
         'vacuna_nombre.str.contains("Moderna")').primera_dosis_cantidad.sum()
 
     return {
-        "comparativaVacunas": {
+        "status": 200,
+        "titulo": "Comparativa vacunas",
+        "descripcion": f'Cantidad de vacunas aplicadas por marca incluyendo la primera y segunda dosis.',
+        "data": {
             "Sputnik": {
-                "subtitle": "Sputnik",
+                "nombre": "Sputnik",
                 "total": int(sputnik)
             },
             "AstraZeneca": {
-                "subtitle": "AstraZeneca",
+                "nombre": "AstraZeneca",
                 "total": int(astrazeneca)
             },
             "Sinopharm": {
-                "subtitle": "Sinopharm",
+                "nombre": "Sinopharm",
                 "total": int(sinopharm)
             },
             "Covishield": {
-                "subtitle": "Covishield",
+                "nombre": "Covishield",
                 "total": int(covishield)
             },
             "Moderna": {
-                "subtitle": "Moderna",
+                "nombre": "Moderna",
                 "total": int(moderna)
             }
         }
@@ -93,5 +120,5 @@ def vacunas():
 
 
 @app.route('/genero/<dosis>', methods=['GET'])
-def genero(dosis):
+def genero(dosis=0):
     return obtenerDatosGenero(dosis)
