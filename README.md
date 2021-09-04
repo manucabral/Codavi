@@ -5,7 +5,7 @@
   <a href="https://es.reactjs.org/"><img src="https://img.shields.io/badge/React-16.8.6-blue.svg" alt="React"> </a>
   <a href="https://nodejs.org/es/"><img src="https://img.shields.io/badge/Node-14.15.3-00610d.svg" alt="Node"> </a>
 
-  <a href="https://vercel.com"><img src="https://vercelbadge.vercel.app/api/manucabral/Codavi" alt="Vercel"> </a>
+  <a href="https://vercel.com"><img src="https://vercelbadge.vercel.app/api/andrewmanu/codavi-web" alt="Vercel"> </a>
   <a href="#"><img src="https://img.shields.io/github/issues/manucabral/Codavi" alt="issues"> </a>
   <a href="#"><img src="https://img.shields.io/github/commit-activity/m/manucabral/Codavi" alt="activity"> </a>
   <a href="#"><img src="https://img.shields.io/github/contributors/manucabral/Codavi" alt="contributors"> </a>
