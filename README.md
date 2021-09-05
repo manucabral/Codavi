@@ -1,4 +1,3 @@
-<div style="background-color:black;color:white;">
 <div align="center">
   <h1>Codavi :bar_chart:</h1>
   <a href="https://github.com/manucabral/COVID-19-Davi/blob/main/LICENSE"><img src="https://img.shields.io/badge/License-Apache_2.0-red.svg" alt="licence"> </a>
@@ -47,4 +46,3 @@ cd Codavi
 python main.py
 ```
 > Ten en cuenta que Codavi descargará los datos y luego los eliminará, esto tomará poco tiempo.
-</div>
