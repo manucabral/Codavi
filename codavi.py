@@ -1,41 +1,6 @@
-from urllib.request import urlopen
-from datetime import datetime
-import pandas as pd
-import mysql.connector
-import zipfile
-import shutil
-import os
+from data.descargar import descargarArchivo, existeArchivo, CASOS_ARCHIVO, VACUNACION_ARCHIVO
 
-FECHA_ACTUAL = datetime.now().date().isoformat()
-URL_DATASET = 'https://sisa.msal.gov.ar/datos/descargas/covid-19/files/'
-VACUNACION_ARCHIVO = 'datos_nomivac_covid19'
-CASOS_ARCHIVO = 'Covid19Casos'
-
-def existeArchivo(nombreArchivo):
-    return os.path.isfile('./' + nombreArchivo + '.csv')
-
-def descargarArchivo(nombreArchivo):
-
-    comprimido = nombreArchivo + '.zip'
-    csv = nombreArchivo + '.csv'
-
-    print('> Iniciando descarga del archivo', comprimido)
-    with urlopen(URL_DATASET + comprimido) as respuesta, open(comprimido, 'wb') as salida:
-
-        print('>> Copiando', comprimido, 'en el directorio..')
-        shutil.copyfileobj(respuesta, salida)
-
-        print('>> Extrayendo', csv, 'del archivo comprimido..')
-        with zipfile.ZipFile(comprimido) as archivoComprimido:
-            archivoComprimido.extract(csv)
-
-    print('>> Eliminando', comprimido, 'del directorio..')
-    os.remove(comprimido)
-
-    return print('> Archivo', csv, 'descargado correctamente en el directorio.')
- 
 if __name__ == "__main__":
-
     try:
         if not existeArchivo(VACUNACION_ARCHIVO):
             descargarArchivo(VACUNACION_ARCHIVO)
@@ -49,3 +14,5 @@ if __name__ == "__main__":
 
     except ValueError:
         print('Ocurrio un error al descargar los archivos: ', ValueError)
+
+    print('Vacunas aplicadas primera dosis\n')
