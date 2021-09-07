@@ -14,12 +14,12 @@
 **Codavi** es un servicio de código abierto que trata sobre la visualización de datos sobre el COVID-19 en toda la Argentina.
 ## Contiene
 - Vacunación
-  - Dosis aplicadas: [Primera dosis](https://nbviewer.jupyter.org/github/manucabral/Codavi/blob/main/data/Primera%20dosis/DOSIS1-total.ipynb) / [Segunda Dosis](https://nbviewer.jupyter.org/github/manucabral/Codavi/blob/main/data//Segunda%20dosis/DOSIS2-total.ipynb) / [Total de Dosis](https://nbviewer.jupyter.org/github/manucabral/Codavi/blob/main/data//Segunda%20dosis/DOSIS2-total.ipynb)
-   - Cantidad de dosis aplicadas por marca: [Primera Dosis](https://nbviewer.jupyter.org/github/manucabral/Codavi/blob/main/data/Primera%20dosis/DOSIS1-VacunasAplicadas.ipynb) / [Segunda Dosis](https://nbviewer.jupyter.org/github/manucabral/Codavi/blob/main/data/Segunda%20dosis/DOSIS2-VacunasAplicadas.ipynb)
+  - Dosis aplicadas: [Primera dosis](https://nbviewer.jupyter.org/github/manucabral/Codavi/blob/main/data/Primera_Dosis/DOSIS1-total.ipynb) / [Segunda Dosis](https://nbviewer.jupyter.org/github/manucabral/Codavi/blob/main/data//Segunda_dosis/DOSIS2-total.ipynb) / [Total de Dosis](https://nbviewer.jupyter.org/github/manucabral/Codavi/blob/main/data//Segunda%20dosis/DOSIS2-total.ipynb)
+   - Cantidad de dosis aplicadas por marca: [Primera Dosis](https://nbviewer.jupyter.org/github/manucabral/Codavi/blob/main/data/Primera_Dosis/DOSIS1-VacunasAplicadas.ipynb) / [Segunda Dosis](https://nbviewer.jupyter.org/github/manucabral/Codavi/blob/main/data/Segunda_Dosis/DOSIS2-VacunasAplicadas.ipynb)
 
-  - Comparación entre mujeres y hombres: [Primera Dosis](https://nbviewer.jupyter.org/github/manucabral/Codavi/blob/main/data/Primera%20dosis/DOSIS1-MasculineAndFeminineComparative.ipynb) / [Segunda Dosis](https://nbviewer.jupyter.org/github/manucabral/Codavi/blob/main/data//Segunda%20dosis/DOSIS2-MasculineAndFeminineComparative.ipynb)
+  - Comparación entre mujeres y hombres: [Primera Dosis](https://nbviewer.jupyter.org/github/manucabral/Codavi/blob/main/data/Primera_Dosis/DOSIS1-MasculineAndFeminineComparative.ipynb) / [Segunda Dosis](https://nbviewer.jupyter.org/github/manucabral/Codavi/blob/main/data//Segunda_Dosis/DOSIS2-MasculineAndFeminineComparative.ipynb)
   
-  - Comparación por grupo etario: [Primera Dosis](https://nbviewer.jupyter.org/github/manucabral/Codavi/blob/main/data/Primera%20dosis/DOSIS1-GrupoEtarioComparativa.ipynb) / [Segunda Dosis](https://nbviewer.jupyter.org/github/manucabral/Codavi/blob/main/data/Segunda%20dosis/DOSIS2-GrupoEtarioComparativa.ipynb)
+  - Comparación por grupo etario: [Primera Dosis](https://nbviewer.jupyter.org/github/manucabral/Codavi/blob/main/data/Primera_Dosis/DOSIS1-GrupoEtarioComparativa.ipynb) / [Segunda Dosis](https://nbviewer.jupyter.org/github/manucabral/Codavi/blob/main/data/Segunda_Dosis/DOSIS2-GrupoEtarioComparativa.ipynb)
   
 - Casos
   - Comparativa de casos por género: _en desarrollo_
