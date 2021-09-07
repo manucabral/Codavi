@@ -11,40 +11,38 @@
   <a href="#"><img src="https://img.shields.io/github/contributors/manucabral/Codavi" alt="contributors"> </a>
 </div>
 
-**Codavi** es un servicio de código abierto que trata sobre la visualización y estadísticas de información oficial sobre el COVID-19 en toda la Argentina.
-
+**Codavi** es un servicio de código abierto que trata sobre la visualización de datos sobre el COVID-19 en toda la Argentina.
 ## Contiene
 - Vacunación
-  - Dosis aplicadas
-    - [Primera dosis](https://nbviewer.jupyter.org/github/manucabral/Codavi/blob/main/data/Primera%20dosis/DOSIS1-total.ipynb) / [Segunda Dosis](https://nbviewer.jupyter.org/github/manucabral/Codavi/blob/main/data//Segunda%20dosis/DOSIS2-total.ipynb) / [Total de Dosis](https://nbviewer.jupyter.org/github/manucabral/Codavi/blob/main/data//Segunda%20dosis/DOSIS2-total.ipynb)
-  - Comparación entre mujeres y hombres vacunados
-    - [Primera Dosis](https://nbviewer.jupyter.org/github/manucabral/Codavi/blob/main/data/Primera%20dosis/DOSIS1-MasculineAndFeminineComparative.ipynb) / [Segunda Dosis](https://nbviewer.jupyter.org/github/manucabral/Codavi/blob/main/data//Segunda%20dosis/DOSIS2-MasculineAndFeminineComparative.ipynb)
+  - Dosis aplicadas: [Primera dosis](https://nbviewer.jupyter.org/github/manucabral/Codavi/blob/main/data/Primera%20dosis/DOSIS1-total.ipynb) / [Segunda Dosis](https://nbviewer.jupyter.org/github/manucabral/Codavi/blob/main/data//Segunda%20dosis/DOSIS2-total.ipynb) / [Total de Dosis](https://nbviewer.jupyter.org/github/manucabral/Codavi/blob/main/data//Segunda%20dosis/DOSIS2-total.ipynb)
+   - Cantidad de dosis aplicadas por marca: [Primera Dosis](https://nbviewer.jupyter.org/github/manucabral/Codavi/blob/main/data/Primera%20dosis/DOSIS1-VacunasAplicadas.ipynb) / [Segunda Dosis](https://nbviewer.jupyter.org/github/manucabral/Codavi/blob/main/data/Segunda%20dosis/DOSIS2-VacunasAplicadas.ipynb)
+
+  - Comparación entre mujeres y hombres: [Primera Dosis](https://nbviewer.jupyter.org/github/manucabral/Codavi/blob/main/data/Primera%20dosis/DOSIS1-MasculineAndFeminineComparative.ipynb) / [Segunda Dosis](https://nbviewer.jupyter.org/github/manucabral/Codavi/blob/main/data//Segunda%20dosis/DOSIS2-MasculineAndFeminineComparative.ipynb)
   
-  - Comparación de vacunados por grupo etario
-    - [Primera Dosis](https://nbviewer.jupyter.org/github/manucabral/Codavi/blob/main/data/Primera%20dosis/DOSIS1-GrupoEtarioComparativa.ipynb) / [Segunda Dosis](https://nbviewer.jupyter.org/github/manucabral/Codavi/blob/main/data/Segunda%20dosis/DOSIS2-GrupoEtarioComparativa.ipynb)
+  - Comparación por grupo etario: [Primera Dosis](https://nbviewer.jupyter.org/github/manucabral/Codavi/blob/main/data/Primera%20dosis/DOSIS1-GrupoEtarioComparativa.ipynb) / [Segunda Dosis](https://nbviewer.jupyter.org/github/manucabral/Codavi/blob/main/data/Segunda%20dosis/DOSIS2-GrupoEtarioComparativa.ipynb)
   
-  - Cantidad de vacunas aplicadas por marca
-    - [Primera Dosis](https://nbviewer.jupyter.org/github/manucabral/Codavi/blob/main/data/Primera%20dosis/DOSIS1-VacunasAplicadas.ipynb) / [Segunda Dosis](https://nbviewer.jupyter.org/github/manucabral/Codavi/blob/main/data/Segunda%20dosis/DOSIS2-VacunasAplicadas.ipynb)
 - Casos
-  - Comparativa de casos por género
+  - Comparativa de casos por género: _en desarrollo_
 
 ## Fuente de datos
 Todos los análisis y comparativas estan basados de los datos que provee el gobierno Argentino sobre el virus, estos datos lo puedes descargar [aquí](https://datos.gob.ar/dataset/salud-vacunas-contra-covid-19-dosis-aplicadas-republica-argentina---registro-desagregado).
 Los datos son actualizados diariamente o semanalmente por el mismo gobierno del país.
 
-## Requerimientos
-- Pandas
-- Matplotlib
-> Si requieres instalarlos.
+## Librerias utilizadas
+- [pandas](https://github.com/pandas-dev/pandas)
+- [matplotlib](https://github.com/matplotlib/matplotlib)
+> Si requieres instalarlos
 ```
 pip install 'nombre'
 ```
 
-## Uso para visualización
-Clonar y ejecutar el archivo main.py, o también puedes usar Jupyter Notebook para la visualización de datos.
+## Visualización mediante terminal
+Clonar y ejecutar el archivo **codavi.py**
 ```
 git clone --recursive https://github.com/manucabral/Codavi.git
 cd Codavi
-python main.py
+python codavi.py
 ```
+> También puedes usar Jupyter Notebook para la visualización de datos accediendo a la carpeta **data**
+
 > Ten en cuenta que Codavi descargará los datos y luego los eliminará, esto tomará poco tiempo.
