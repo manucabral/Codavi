@@ -15,14 +15,16 @@
 
 ## Contiene
 - Vacunación
-  - Comparación entre hombres y mujeres vacunados
-    - [Primera dosis](https://nbviewer.jupyter.org/github/manucabral/Codavi/blob/main/data/Primera%20dosis/DOSIS1-MasculineAndFeminineComparative.ipynb) / [Segunda dosis](https://nbviewer.jupyter.org/github/manucabral/Codavi/blob/main/data//Segunda%20dosis/DOSIS2-MasculineAndFeminineComparative.ipynb)
+  - Dosis aplicadas
+    - [Primera dosis](https://nbviewer.jupyter.org/github/manucabral/Codavi/blob/main/data/Primera%20dosis/DOSIS1-total.ipynb) / [Segunda Dosis](https://nbviewer.jupyter.org/github/manucabral/Codavi/blob/main/data//Segunda%20dosis/DOSIS2-total.ipynb) / [Total de Dosis](https://nbviewer.jupyter.org/github/manucabral/Codavi/blob/main/data//Segunda%20dosis/DOSIS2-total.ipynb)
+  - Comparación entre mujeres y hombres vacunados
+    - [Primera Dosis](https://nbviewer.jupyter.org/github/manucabral/Codavi/blob/main/data/Primera%20dosis/DOSIS1-MasculineAndFeminineComparative.ipynb) / [Segunda Dosis](https://nbviewer.jupyter.org/github/manucabral/Codavi/blob/main/data//Segunda%20dosis/DOSIS2-MasculineAndFeminineComparative.ipynb)
   
-  - Cantidad de vacunados por grupo etario
-    - [Primera dosis](https://nbviewer.jupyter.org/github/manucabral/Codavi/blob/main/data/Primera%20dosis/DOSIS1-GrupoEtarioComparativa.ipynb) / [Segunda dosis](https://nbviewer.jupyter.org/github/manucabral/Codavi/blob/main/data/Segunda%20dosis/DOSIS2-GrupoEtarioComparativa.ipynb)
+  - Comparación de vacunados por grupo etario
+    - [Primera Dosis](https://nbviewer.jupyter.org/github/manucabral/Codavi/blob/main/data/Primera%20dosis/DOSIS1-GrupoEtarioComparativa.ipynb) / [Segunda Dosis](https://nbviewer.jupyter.org/github/manucabral/Codavi/blob/main/data/Segunda%20dosis/DOSIS2-GrupoEtarioComparativa.ipynb)
   
   - Cantidad de vacunas aplicadas por marca
-    - [Primera dosis](https://nbviewer.jupyter.org/github/manucabral/Codavi/blob/main/data/Primera%20dosis/DOSIS1-VacunasAplicadas.ipynb) / [Segunda dosis](https://nbviewer.jupyter.org/github/manucabral/Codavi/blob/main/data/Segunda%20dosis/DOSIS2-VacunasAplicadas.ipynb)
+    - [Primera Dosis](https://nbviewer.jupyter.org/github/manucabral/Codavi/blob/main/data/Primera%20dosis/DOSIS1-VacunasAplicadas.ipynb) / [Segunda Dosis](https://nbviewer.jupyter.org/github/manucabral/Codavi/blob/main/data/Segunda%20dosis/DOSIS2-VacunasAplicadas.ipynb)
 - Casos
   - Comparativa de casos por género
 
