@@ -46,3 +46,20 @@ python codavi.py
 > También puedes usar Jupyter Notebook para la visualización de datos accediendo a la carpeta **data**
 
 > Ten en cuenta que Codavi descargará los datos y luego los eliminará, esto tomará poco tiempo.
+
+# API
+La API contiene las siguientes rutas para obtener información.
+
+- /vacunas
+- /genero/[dosis]
+
+Estas mismas las puedes consultar con la versión de prueba yendo [aquí](http://codavi.herokuapp.com)
+
+## Desplegar localmente
+Clonar y ejecutar el archivo **api/wsgi.py**
+```
+git clone --recursive https://github.com/manucabral/Codavi.git
+cd Codavi/api
+python wsgi.py
+```
+Con esto la API correrá en la siguiente dirección [localhost:5000](http://localhost:5000) donde podrás acceder a la información.
