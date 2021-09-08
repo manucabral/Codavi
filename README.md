@@ -36,6 +36,9 @@ Los datos son actualizados diariamente o semanalmente por el mismo gobierno del 
 pip install 'nombre'
 ```
 
+## Codavi en otros paises
+  - [Chile](https://github.com/leo1q/Codavi-CL)
+
 ## Visualización mediante terminal
 Clonar y ejecutar el archivo **codavi.py**
 ```
