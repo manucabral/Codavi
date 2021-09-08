@@ -24,6 +24,9 @@
 - Casos
   - Comparativa de casos por género: _en desarrollo_
 
+## Codavi en otros paises
+  - [Codavi Chile](https://github.com/leo1q/Codavi-CL)
+
 ## Fuente de datos
 Todos los análisis y comparativas estan basados de los datos que provee el gobierno Argentino sobre el virus, estos datos lo puedes descargar [aquí](https://datos.gob.ar/dataset/salud-vacunas-contra-covid-19-dosis-aplicadas-republica-argentina---registro-desagregado).
 Los datos son actualizados diariamente o semanalmente por el mismo gobierno del país.
@@ -35,9 +38,6 @@ Los datos son actualizados diariamente o semanalmente por el mismo gobierno del 
 ```
 pip install 'nombre'
 ```
-
-## Codavi en otros paises
-  - [Chile](https://github.com/leo1q/Codavi-CL)
 
 ## Visualización mediante terminal
 Clonar y ejecutar el archivo **codavi.py**
