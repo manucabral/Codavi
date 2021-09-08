@@ -1,5 +1,8 @@
 import pandas as pd
+import matplotlib.pyplot as plt
 import mysql.connector
+import base64
+import io
 from flask import Flask
 from datetime import datetime
 
@@ -13,7 +16,14 @@ def obtenerDatosVacuna():
         data = pd.read_csv(url)
     except Exception as Error:
         print('Hubo un error al leer el dataset', Error)
-    return data
+
+    sputnik = data.query('vacuna_nombre.str.contains("Sputnik")')
+    astrazeneca = data.query('vacuna_nombre.str.contains("AstraZeneca")')
+    sinopharm = data.query('vacuna_nombre.str.contains("Sinopharm")')
+    covishield = data.query('vacuna_nombre.str.contains("COVISHIELD")')
+    moderna = data.query('vacuna_nombre.str.contains("Moderna")')
+
+    return sputnik, astrazeneca, sinopharm, covishield, moderna
 
 
 def obtenerDatosGenero(dosis):
@@ -76,48 +86,71 @@ def index():
     return "Bienvenido a la API de Codavi."
 
 
-@app.route('/vacunas', methods=['GET'])
-def vacunas():
-    data = obtenerDatosVacuna()
-    sputnik = data.query(
-        'vacuna_nombre.str.contains("Sputnik")').primera_dosis_cantidad.sum()
-    astrazeneca = data.query(
-        'vacuna_nombre.str.contains("AstraZeneca")').primera_dosis_cantidad.sum()
-    sinopharm = data.query(
-        'vacuna_nombre.str.contains("Sinopharm")').primera_dosis_cantidad.sum()
-    covishield = data.query(
-        'vacuna_nombre.str.contains("COVISHIELD")').primera_dosis_cantidad.sum()
-    moderna = data.query(
-        'vacuna_nombre.str.contains("Moderna")').primera_dosis_cantidad.sum()
+@app.route('/vacunas/<dosis>', methods=['GET'])
+def vacunas(dosis):
+    titulo = None
+    descripcion = None
+    objetivo_dosis = None
+    sputnik, astrazeneca, sinopharm, covishield, moderna = obtenerDatosVacuna()
 
+    if int(dosis) == 1:
+        titulo = 'Vacunas aplicadas en la primera dosis'
+        descripcion = "Cantidad de vacunas aplicadas por marca en la primera dosis"
+        objetivo_dosis = 'primera_dosis_cantidad'
+    elif int(dosis) == 2:
+        titulo = 'Vacunas aplicadas en la segunda dosis'
+        descripcion = "Cantidad de vacunas aplicadas por marca en la segunda dosis"
+        objetivo_dosis = 'segunda_dosis_cantidad'
+
+    sputnik_total = sputnik[objetivo_dosis].sum()
+    astrazeneca_total = astrazeneca[objetivo_dosis].sum()
+    sinopharm_total = sinopharm[objetivo_dosis].sum()
+    covishield_total = covishield[objetivo_dosis].sum()
+    moderna_total = moderna[objetivo_dosis].sum()
+    total = sputnik_total + astrazeneca_total + \
+        sinopharm_total + covishield_total + moderna_total
+
+    x = ['Sputnik', 'AstraZeneca', 'Sinopharm', 'Covishield', 'Moderna']
+    y = [sputnik_total, astrazeneca_total,
+         sinopharm_total, covishield_total, moderna_total]
+    plt.bar(x, y, color='green')
+    plt.ylabel('Cantidad')
+    plt.xlabel('Marca')
+    plt.title(titulo)
+
+    img = io.BytesIO()
+    plt.savefig(img, format='png', bbox_inches="tight")
+    plt.close()
+    img = base64.b64encode(img.getvalue()).decode("utf-8").replace("\n", "")
     return {
         "status": 200,
-        "titulo": "Comparativa vacunas",
-        "descripcion": f'Cantidad de vacunas aplicadas por marca incluyendo la primera y segunda dosis.',
+        "titulo": titulo,
+        "descripcion": descripcion,
+        "total": int(total),
+        "grafico": img,
         "data": {
             "Sputnik": {
                 "nombre": "Sputnik",
-                "total": int(sputnik)
+                "total": int(sputnik_total)
             },
             "AstraZeneca": {
                 "nombre": "AstraZeneca",
-                "total": int(astrazeneca)
+                "total": int(astrazeneca_total)
             },
             "Sinopharm": {
                 "nombre": "Sinopharm",
-                "total": int(sinopharm)
+                "total": int(sinopharm_total)
             },
             "Covishield": {
                 "nombre": "Covishield",
-                "total": int(covishield)
+                "total": int(covishield_total)
             },
             "Moderna": {
                 "nombre": "Moderna",
-                "total": int(moderna)
+                "total": int(moderna_total)
             }
         }
     }
-
 
 @app.route('/genero/<dosis>', methods=['GET'])
 def genero(dosis=0):
