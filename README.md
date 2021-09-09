@@ -54,7 +54,7 @@ python codavi.py
 # API
 La API contiene las siguientes rutas para obtener información.
 
-- /vacunas
+- /vacunas/[dosis]
 - /genero/[dosis]
 
 Estas mismas las puedes consultar con la versión de prueba yendo [aquí](http://codavi.herokuapp.com)
