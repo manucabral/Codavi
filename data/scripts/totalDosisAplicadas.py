@@ -1,4 +1,4 @@
-def totalDosisAplicadas():
+def obtenerTotalDosis():
     import pandas as pd
     data = pd.read_csv('https://sisa.msal.gov.ar/datos/descargas/covid-19/files/Covid19VacunasAgrupadas.csv.zip')
 
@@ -14,4 +14,4 @@ def totalDosisAplicadas():
     moderna_total = moderna['primera_dosis_cantidad'].sum() + moderna['segunda_dosis_cantidad'].sum()
 
     total = sputnik_total + astrazeneca_total + sinopharm_total + covishield_total + moderna_total
-    print(f'Total de dosis suministradas: {total:,}')
+    return total
