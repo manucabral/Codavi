@@ -1,9 +1,12 @@
 import styled from "styled-components";
 import Card from "../components/Card";
 
-const fetcher = (url) => fetch(url).then((res) => res.json());
-
-export default function Home({ vacunas, gpd, gsd }) {
+export default function Home({
+  vacunasPrimeraDosis,
+  vacunasSegundaDosis,
+  gpd,
+  gsd,
+}) {
   return (
     <Main>
       <Container>
@@ -15,9 +18,26 @@ export default function Home({ vacunas, gpd, gsd }) {
       <Subcontainer>
         <Content>
           <Card
-            title={vacunas["titulo"]}
-            description={vacunas["descripcion"]}
-            data={Object.values(vacunas["data"])}
+            title="Total dosis suministradas"
+            description="Total de dosis aplicadas hasta hoy"
+            data={[
+              { nombre: "Primera dosis", total: vacunasPrimeraDosis["total"] },
+              { nombre: "Segunda dosis", total: vacunasSegundaDosis["total"] },
+            ]}
+          />
+        </Content>
+        <Content>
+          <Card
+            title={vacunasSegundaDosis["titulo"]}
+            description={vacunasSegundaDosis["descripcion"]}
+            data={Object.values(vacunasSegundaDosis["data"])}
+            column={true}
+          />
+          <Card
+            title={vacunasPrimeraDosis["titulo"]}
+            description={vacunasPrimeraDosis["descripcion"]}
+            data={Object.values(vacunasPrimeraDosis["data"])}
+            column={true}
           />
         </Content>
         <Content>
@@ -44,19 +64,26 @@ export default function Home({ vacunas, gpd, gsd }) {
   );
 }
 
-export async function getStaticProps(context) {
-  const res = await fetch(`https://codavi.herokuapp.com/vacunas`);
+export async function getServerSideProps(context) {
+  const resVacunasPrimeraDosis = await fetch(
+    `https://codavi.herokuapp.com/vacunas/1`
+  );
+  const vacunasPrimeraDosis = await resVacunasPrimeraDosis.json();
+  const resVacunasSegundaDosis = await fetch(
+    `https://codavi.herokuapp.com/vacunas/2`
+  );
+  const vacunasSegundaDosis = await resVacunasSegundaDosis.json();
+
   const resgpd = await fetch(`https://codavi.herokuapp.com/genero/1`);
   const resgsd = await fetch(`https://codavi.herokuapp.com/genero/2`);
   const gpd = await resgpd.json();
   const gsd = await resgsd.json();
-  const vacunas = await res.json();
 
-  if (!vacunas)
+  if (!vacunasPrimeraDosis || !vacunasSegundaDosis)
     return {
       redirect: {
         destination: "/",
-        permanent: vacunas,
+        permanent: vacunasPrimeraDosis,
       },
     };
 
@@ -77,7 +104,7 @@ export async function getStaticProps(context) {
     };
 
   return {
-    props: { vacunas, gpd, gsd },
+    props: { vacunasPrimeraDosis, vacunasSegundaDosis, gpd, gsd },
   };
 }
 
@@ -96,7 +123,7 @@ const Container = styled.div`
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  background-color: ${({ theme }) => theme.backgrounds.secondary};
+  background-color: ${({ theme }) => theme.backgrounds.tertiary};
 `;
 
 const Subcontainer = styled.div`
@@ -111,11 +138,11 @@ const Subcontainer = styled.div`
 
 const Title = styled.h1`
   font-size: 64px;
-  color: #e80000;
+  color: ${({ theme }) => theme.colors.main};
 `;
 
 const Description = styled.p`
-  color: ${({ theme }) => theme.colors.secondary};
+  color: ${({ theme }) => theme.colors.primary};
 `;
 
 const Content = styled.div`
