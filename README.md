@@ -67,3 +67,7 @@ cd Codavi/api
 python wsgi.py
 ```
 Con esto la API correrá en la siguiente dirección [localhost:5000](http://localhost:5000) donde podrás acceder a la información.
+
+# Bot de discord
+Invita a Codavi desde [aquí](https://discord.com/oauth2/authorize?client_id=884893298551037983&permissions=8&scope=bot) a tu servidor de discord para estar a tanto sobre las vacunaciones.
+
