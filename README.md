@@ -21,12 +21,9 @@
   
   - Comparación por grupo etario: [Primera Dosis](https://nbviewer.jupyter.org/github/manucabral/Codavi/blob/main/data/Primera_Dosis/DOSIS1-ComparativaGrupoEtario.ipynb) / [Segunda Dosis](https://nbviewer.jupyter.org/github/manucabral/Codavi/blob/main/data/Segunda_Dosis/DOSIS2-ComparativaGrupoEtario.ipynb)
   
-- Casos
-  - Comparativa de casos por género: _en desarrollo_
 
 ## Codavi en otros paises
   - [Codavi Chile](https://github.com/leo1q/Codavi-CL)
-  - Codavi Paraguay: _en desarrollo_
 
 ## Fuente de datos
 Todos los análisis y comparativas estan basados de los datos que provee el gobierno Argentino sobre el virus, estos datos lo puedes descargar [aquí](https://datos.gob.ar/dataset/salud-vacunas-contra-covid-19-dosis-aplicadas-republica-argentina---registro-desagregado).
