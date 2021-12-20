@@ -1,5 +1,5 @@
 # Codavi Data
-Visualización de datos mediante Jupyter Notebook usando Python.
+Visualización de datos mediante Jupyter Notebook o Python.
 
 ## Contiene
 - Vacunación
@@ -23,3 +23,5 @@ Ejecuta el archivo **main.py**
 py main.py
 ```
 La ejecución tardará un poco ya que se descarga los datos crudos desde la página del gobierno.
+
+Por otro lado puedes visualizar los datos mediante Jupyter Notebook accediendo a las carpetas `Primera_Dosis` y `Segunda_Dosis`
