@@ -11,7 +11,7 @@
   <a href="#"><img src="https://img.shields.io/github/contributors/manucabral/Codavi" alt="contributors"> </a>
 </div>
 
-**Codavi** es un servicio de código abierto que trata sobre la visualización de datos sobre el COVID-19 en toda la Argentina.
+**Codavi** es un servicio de código abierto que trata sobre la visualización y obtención de datos sobre el COVID-19 en toda la Argentina.
 ## Contiene
 - Vacunación
   - Dosis aplicadas: [Primera dosis](https://nbviewer.jupyter.org/github/manucabral/Codavi/blob/main/data/Primera_Dosis/DOSIS1-TotalVacunasAplicadas.ipynb) / [Segunda Dosis](https://nbviewer.jupyter.org/github/manucabral/Codavi/blob/main/data/Segunda_Dosis/DOSIS2-TotalVacunasAplicadas.ipynb) / [Total de Dosis](https://nbviewer.jupyter.org/github/manucabral/Codavi/blob/main/data/TotalDosisAplicadas.ipynb)
@@ -21,37 +21,38 @@
   
   - Comparación por grupo etario: [Primera Dosis](https://nbviewer.jupyter.org/github/manucabral/Codavi/blob/main/data/Primera_Dosis/DOSIS1-ComparativaGrupoEtario.ipynb) / [Segunda Dosis](https://nbviewer.jupyter.org/github/manucabral/Codavi/blob/main/data/Segunda_Dosis/DOSIS2-ComparativaGrupoEtario.ipynb)
   
+# Paquete
+Codavi puede ser instalado mediante PyPI, tener en cuenta que este paquete todavía está en desarrollo.
+## Instalación
+```
+pip install codavi
+```
+## Uso
+```py
+from codavi import Codavi
 
-## Codavi en otros paises
-  - [Codavi Chile](https://github.com/leo1q/Codavi-CL)
-  - [Codavi Uruguay](https://github.com/nyashi/CODAVI-UY)
+# instanciamos el objeto de Codavi
+cod = Codavi()
 
-## Fuente de datos
+# especificamos la dosis y si es acumulado o no
+data = cod.aplicadas(dosis='primera', acumulado=True)
+
+print(data) # salida: ['fecha', 'cantidad']
+```
+### Parámetros requeridos
+- **dosis**: primera, segunda o total.
+- **fecha**: en formato 'año-mes-día' ejemplo: '2021-12-12'
+- **acumulado**: True o False.
+
+# Fuente de datos
 Todos los análisis y comparativas estan basados de los datos que provee el gobierno Argentino sobre el virus, estos datos lo puedes descargar [aquí](https://datos.gob.ar/dataset/salud-vacunas-contra-covid-19-dosis-aplicadas-republica-argentina---registro-desagregado).
 Los datos son actualizados diariamente o semanalmente por el mismo gobierno del país.
-
-## Librerias utilizadas
-- [pandas](https://github.com/pandas-dev/pandas)
-- [matplotlib](https://github.com/matplotlib/matplotlib)
-> Si requieres instalarlos
-```
-pip install 'nombre'
-```
-
-## Visualización mediante terminal
-Clonar y ejecutar el archivo **codavi.py**
-```
-git clone --recursive https://github.com/manucabral/Codavi.git
-cd Codavi
-python codavi.py
-```
-> También puedes usar Jupyter Notebook para la visualización de datos accediendo a la carpeta **data**
-
-> Ten en cuenta que Codavi descargará los datos y luego los eliminará, esto tomará poco tiempo.
-
+# Codavi en otros paises
+Codavi se extiende en otros países los cuales son
+  - [Codavi Chile](https://github.com/leo1q/Codavi-CL)
+  - [Codavi Uruguay](https://github.com/nyashi/CODAVI-UY)
 # API
-La API contiene las siguientes rutas para obtener información.
-
+Otra forma de obtener los datos es usando la API de Codavi, en ella encontraras las siguientes rutas
 - /vacunas/[dosis]
 - /genero/[dosis]
 
@@ -64,7 +65,7 @@ git clone --recursive https://github.com/manucabral/Codavi.git
 cd Codavi/api
 python wsgi.py
 ```
-Con esto la API correrá en la siguiente dirección [localhost:5000](http://localhost:5000) donde podrás acceder a la información.
+Finalizando estos pasos habrás desplegado correctamente la API de Codavi localmente en la siguiente dirección [localhost:5000](http://localhost:5000).
 
 # Bot de discord
 Invita a Codavi desde [aquí](https://discord.com/oauth2/authorize?client_id=884893298551037983&permissions=8&scope=bot) a tu servidor de discord para estar a tanto sobre las vacunaciones.
