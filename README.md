@@ -1,4 +1,8 @@
-![codavi-logo](https://i.imgur.com/r92Bj5n.png)
+
+<p align="center">
+<img src="https://i.imgur.com/r92Bj5n.png?raw=true" width="600" title="codavi-logo">
+</p>
+
 <div align="center">
   <a href="https://github.com/manucabral/COVID-19-Davi/blob/main/LICENSE"><img src="https://img.shields.io/badge/License-Apache_2.0-red.svg" alt="licence"> </a>
   <a href="https://www.python.org/downloads/release/python-360/"><img src="https://img.shields.io/badge/python-3.9.1-blue.svg" alt="Python"> </a>
