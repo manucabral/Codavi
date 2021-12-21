@@ -22,6 +22,7 @@
 - [Whatsapp Bot](https://github.com/manucabral/Codavi/tree/main/bot/whatsapp)
 - [Discord Bot](https://github.com/manucabral/Codavi/tree/main/bot/discord)
 - [Python Package](https://github.com/manucabral/Codavi/tree/main/package)
+- [Reportes](https://github.com/manucabral/Codavi/tree/main/reportes)
 - [Página web](https://codavi-web.vercel.app/)
 
 ## Codavi en otros paises
