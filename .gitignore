@@ -9,7 +9,6 @@ __pycache__/
 *.txt
 Covid19Casos.csv
 
-
 # Distribution / packaging
 .Python
 build/

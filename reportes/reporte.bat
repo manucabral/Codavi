@@ -1,5 +1,5 @@
 py reporte.py
-git status
 git add *.csv
-git status
+git commit -m "Reporte para el día de hoy"
+git push
 pause
