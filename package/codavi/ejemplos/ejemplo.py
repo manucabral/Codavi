@@ -1,4 +1,6 @@
 from codavi import Codavi
 
-data = Codavi().aplicadas(dosis='primera', acumulado=True)
-print(data)
+cod = Codavi()
+vacunas = cod.vacunas_aplicadas(acumulado=True)
+llamadas = cod.llamadas_107(acumulado=True)
+print(vacunas, llamadas)

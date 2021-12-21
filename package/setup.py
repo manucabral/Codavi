@@ -1,12 +1,9 @@
 from setuptools import setup
 
-with open('requirements.txt') as file:
-    requirements = file.read().split('\n')
-
 with open('README.md', 'r', encoding="utf-8") as file:
     long_description = file.read()
 
-VERSION = '0.2'
+VERSION = '0.5'
 AUTHOR = 'Manuel Cabral'
 EMAIL = 'cabral.manuel@yandex.com'
 DESCRIPTION = 'Obtención de datos sobre el COVID-19'
@@ -24,8 +21,8 @@ setup(
   author_email = EMAIL,
   url = 'https://github.com/manucabral/Codavi',
   keywords = ['python', 'covid', 'covid-19', 'covid-argentina', 'covid-data'],
-  install_requires = requirements,
-  python_requires = '>= 3.4',
+  install_requires = ['requests'],
+  python_requires = '>= 3.9',
   classifiers=[
     'Development Status :: 3 - Alpha',
     'Intended Audience :: Developers',

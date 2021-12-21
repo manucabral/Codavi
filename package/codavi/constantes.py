@@ -1,11 +1,41 @@
-URL_DOSIS_ACUMULADOS = {
-    'primera': 'https://sisa.msal.gov.ar/datos/descargas/covid-19/files/covid_1raDosis_acumulado.csv',
-    'segunda': 'https://sisa.msal.gov.ar/datos/descargas/covid-19/files/covid_2daDosis_acumulado.csv',
-    'total': 'https://sisa.msal.gov.ar/datos/descargas/covid-19/files/covid_total_acumulado.csv'
+"""
+    ARGENTINA:
+        Estos datos son públicos generados, guardados y publicados por organismos de gobierno de la República Argentina.
+        Referencia: http://datos.salud.gob.ar/dataset
+"""
+
+URLS = {
+    'ar': {
+        'llamadas_107': 'https://cdn.buenosaires.gob.ar/datosabiertos/datasets/salud/llamados-107-covid/llamados_107_covid.csv',
+        'vacunas_aplicadas': {
+            'acumulado': {
+                'primera': 'https://sisa.msal.gov.ar/datos/descargas/covid-19/files/covid_1raDosis_acumulado.csv',
+                'segunda': 'https://sisa.msal.gov.ar/datos/descargas/covid-19/files/covid_2daDosis_acumulado.csv',
+                'total': 'https://sisa.msal.gov.ar/datos/descargas/covid-19/files/covid_total_acumulado.csv'
+            },
+            'diario': {
+                'primera': 'https://sisa.msal.gov.ar/datos/descargas/covid-19/files/covid_1raDosis_diario.csv',
+                'segunda': 'https://sisa.msal.gov.ar/datos/descargas/covid-19/files/covid_2daDosis_diario.csv',
+                'total': 'https://sisa.msal.gov.ar/datos/descargas/covid-19/files/covid_total_diario.csv'
+            }
+        }
+    },
+    'chl': {
+        'vacunas_aplicadas': 'https://raw.githubusercontent.com/MinCiencia/Datos-COVID19/master/output/producto76/vacunacion_t.csv'
+    }
 }
 
-URL_DOSIS_DIARIAS = {
-    'primera': 'https://sisa.msal.gov.ar/datos/descargas/covid-19/files/covid_1raDosis_diario.csv',
-    'segunda': 'https://sisa.msal.gov.ar/datos/descargas/covid-19/files/covid_2daDosis_diario.csv',
-    'total': 'https://sisa.msal.gov.ar/datos/descargas/covid-19/files/covid_total_diario.csv'
+MES = {
+    1: 'JAN',
+    2: 'FEB',
+    3: 'MAR',
+    4: 'APR',
+    5: 'MAY',
+    6: 'JUN',
+    7: 'JUL',
+    8: 'AUG',
+    9: 'SEP',
+    10: 'OCT',
+    11: 'NOV',
+    12: 'DEC'
 }
