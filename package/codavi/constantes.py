@@ -18,7 +18,8 @@ URLS = {
                 'segunda': 'https://sisa.msal.gov.ar/datos/descargas/covid-19/files/covid_2daDosis_diario.csv',
                 'total': 'https://sisa.msal.gov.ar/datos/descargas/covid-19/files/covid_total_diario.csv'
             }
-        }
+        },
+        'casos': 'https://raw.githubusercontent.com/manucabral/Codavi/main/reportes/'
     },
     'chl': {
         'vacunas_aplicadas': 'https://raw.githubusercontent.com/MinCiencia/Datos-COVID19/master/output/producto76/vacunacion_t.csv'

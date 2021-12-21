@@ -1,12 +1,15 @@
 from csv import reader
-from requests import get
+from requests import get, exceptions
 from datetime import datetime
 
 # Todo import
 from .constantes import *
 from .excepciones import *
-
 class Codavi:
+    """
+    Codavi ofrece datos sobre el COVID-19 en toda la Argentina.
+    """
+
     def __fecha_actual(self, formato: str ='%Y-%m-%d') -> str:
         """
         Obtiene la fecha actual del sistema.
@@ -20,26 +23,64 @@ class Codavi:
         """
         Hace una petición HTTP tipo GET hacia determinado URL.
 
-        :parámetro url: URL para hacer la petición.
-        :parámetro decodificar: Codec a decodificar, por predeterminado 'utf-8'.
-        :retorna: str.
-        :tiporetorno: str decodificado.
+        :param url: URL para hacer la petición.
+        :param decodificar: Codec a decodificar, por predeterminado 'utf-8'.
+        :return: str decodificado.
+        :treturn: str.
         """
         try:
             res = get(url)
             res.raise_for_status()
-        except rexceptions.HTTPError as err:
-            raise err
+        except exceptions.HTTPError as err:
+            raise DatosNoActualizados()
         return res.content.decode(decodificar)
+    
+    def fallecidos(self, fecha=None):
+        """
+        Cantidad de fallecidos por COVID-19 en Argentina de manera acumulada.
+
+        :param fecha: Fecha a obtener en formato 'año-mes-día'.
+        :return: Fecha y cantidad.
+        :treturn: ['fecha', 'cantidad']
+        """
+        if not fecha:
+            fecha = self.__fecha_actual()
+        try:
+            res = self.__request(URLS['ar']['casos'] + fecha + '.csv')
+        except DatosNoActualizados as err:
+            print(err)
+            return
+        datos = res.splitlines()[1].split(',')
+        datos.pop(1) # pop casos
+        return datos
+
+    def casos(self, fecha=None):
+        """
+        Cantidad de casos registrados en Argentina de manera acumulada.
+
+        :param fecha: Fecha a obtener en formato 'año-mes-día'.
+        :return: Fecha y cantidad.
+        :treturn: ['fecha', 'cantidad']
+        """
+        if not fecha:
+            fecha = self.__fecha_actual()
+        try:
+            res = self.__request(URLS['ar']['casos'] + fecha + '.csv')
+        except DatosNoActualizados as err:
+            print(err)
+            return
+        datos = res.splitlines()[1].split(',')
+        datos.pop(2) # pop fallecidos
+        return datos
 
     def llamadas_107(self, acumulado=False, fecha=None) -> ['fecha', 'cantidad']:
         """
         Cantidad de llamadas 107 hechas de COVID-19.
 
-        :parámetro acumulado: True para obtener el valor acumulado, False para obtener valor diario.
-        :parámetro fecha: (opcional) fecha especifica a obtener en formato '12MAY2021'.
-        :retorna: fecha y cantidad aplicada.
-        :tiporetorno: ['fecha', 'cantidad']
+        :param acumulado: True para obtener el valor acumulado, False para obtener valor diario.
+        :param fecha: Fecha especifica a obtener en formato '12MAY2021'.
+        :return: Fecha y cantidad.
+        :treturn: ['fecha', 'cantidad']
         """
         res = self.__request(URLS['ar']['llamadas_107'])
         csv = reader(res.splitlines())
@@ -78,11 +119,11 @@ class Codavi:
         """
         Cantidad de dosis aplicadas nacionalmente.
 
-        :parámetro dosis: Dosis a obtener, por predeterminado 'total'.
-        :parámetro acumulado: True para valores acumulados, False para valores diarios.
-        :parámetro fecha: (opcional) fecha especifica a obtener.
-        :retorna: fecha y cantidad aplicada acumulada/diaria.
-        :tiporetorno: ['fecha', 'cantidad']
+        :param dosis: Dosis a obtener, por predeterminado 'total'.
+        :param acumulado: True para valores acumulados, False para valores diarios.
+        :param fecha: Fecha especifica a obtener en formato 'año-mes-día'.
+        :return: Fecha y cantidad aplicada acumulada/diaria.
+        :treturn: ['fecha', 'cantidad']
         """
         url = URLS['ar']['vacunas_aplicadas']['acumulado'][dosis] if acumulado else URLS['ar']['vacunas_aplicadas']['diario'][dosis]
         res = self.__request(url)
