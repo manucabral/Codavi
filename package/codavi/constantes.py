@@ -26,6 +26,19 @@ URLS = {
     }
 }
 
+FILTROS = {
+    'fallecidos': {
+        'm': 5,
+        'f': 6,
+        'todos': 4
+    },
+    'confirmados': {
+        'm': 2,
+        'f': 3,
+        'todos': 1
+    }
+}
+
 MES = {
     1: 'JAN',
     2: 'FEB',

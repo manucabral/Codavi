@@ -3,7 +3,11 @@ from codavi import Codavi
 cod = Codavi()
 vacunas = cod.vacunas_aplicadas(acumulado=True)
 llamadas = cod.llamadas_107(acumulado=True)
-casos = cod.casos()
+total_confirmados = cod.confirmados()
+confirmados_masculinos = cod.confirmados(sexo='m')
+confirmados_femeninos = cod.confirmados(sexo='f')
 muertes = cod.fallecidos()
+muertes_masculinas = cod.fallecidos(sexo='m')
+muertes_femeninas = cod.fallecidos(sexo='f')
 
-print(vacunas, llamadas, casos, muertes)
+print(vacunas, llamadas, total_confirmados)

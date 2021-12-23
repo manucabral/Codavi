@@ -11,3 +11,6 @@ class FechaNoEncontrada(ExcepcionCodavi):
 class VacunaDesconocida(ExcepcionCodavi):
     def __init__(self):
         super().__init__('Vacuna desconocida, lo has escrito bien?')
+class SexoDesconocido(ExcepcionCodavi):
+    def __init__(self):
+        super().__init__('Sexo desconocido')

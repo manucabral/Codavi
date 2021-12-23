@@ -35,14 +35,17 @@ class Codavi:
             raise DatosNoActualizados()
         return res.content.decode(decodificar)
     
-    def fallecidos(self, fecha=None):
+    def fallecidos(self, sexo='todos', fecha=None):
         """
         Cantidad de fallecidos por COVID-19 en Argentina de manera acumulada.
-
+        
+        :param sexo: Filtro por sexo, por defecto 'todos'.
         :param fecha: Fecha a obtener en formato 'año-mes-día'.
         :return: Fecha y cantidad.
         :treturn: ['fecha', 'cantidad']
         """
+        if not sexo.lower() in FILTROS['fallecidos'].keys():
+            raise SexoDesconocido()
         if not fecha:
             fecha = self.__fecha_actual()
         try:
@@ -51,17 +54,21 @@ class Codavi:
             print(err)
             return
         datos = res.splitlines()[1].split(',')
-        datos.pop(1) # pop casos
-        return datos
+        fecha = datos[0]
+        cantidad = datos[FILTROS['fallecidos'][sexo.lower()]]
+        return [fecha, cantidad]
 
-    def casos(self, fecha=None):
+    def confirmados(self, sexo='todos', fecha=None):
         """
-        Cantidad de casos registrados en Argentina de manera acumulada.
+        Cantidad de casos confirmados en Argentina de manera acumulada.
 
+        :param sexo: Filtro por sexo, por defecto 'todos'.
         :param fecha: Fecha a obtener en formato 'año-mes-día'.
         :return: Fecha y cantidad.
         :treturn: ['fecha', 'cantidad']
         """
+        if not sexo.lower() in FILTROS['confirmados'].keys():
+            raise SexoDesconocido()
         if not fecha:
             fecha = self.__fecha_actual()
         try:
@@ -70,8 +77,9 @@ class Codavi:
             print(err)
             return
         datos = res.splitlines()[1].split(',')
-        datos.pop(2) # pop fallecidos
-        return datos
+        fecha = datos[0]
+        cantidad = datos[FILTROS['confirmados'][sexo.lower()]]
+        return [fecha, cantidad]
 
     def llamadas_107(self, acumulado=False, fecha=None) -> ['fecha', 'cantidad']:
         """
