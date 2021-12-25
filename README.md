@@ -31,5 +31,5 @@ Codavi se extiende en otros países los cuales son
   - [Codavi Uruguay](https://github.com/nyashi/CODAVI-UY)
 
 ## Fuente de datos
-Todos los análisis y comparativas estan basados de los datos que provee el gobierno Argentino sobre el virus, estos datos lo puedes descargar [aquí](https://datos.gob.ar/dataset/salud-vacunas-contra-covid-19-dosis-aplicadas-republica-argentina---registro-desagregado).
-Los datos son actualizados diariamente o semanalmente por el mismo gobierno del país.
+Todos los análisis, obtención y comparativas estan basados de los datos que provee el gobierno Argentino sobre el virus, estos datos lo puedes descargar [aquí](https://datos.gob.ar/).
+Los datos son actualizados diariamente por el mismo gobierno del país.
