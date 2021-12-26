@@ -3,10 +3,10 @@ from setuptools import setup
 with open('README.md', 'r', encoding="utf-8") as file:
     long_description = file.read()
 
-VERSION = '0.6'
+VERSION = '1.1'
 AUTHOR = 'Manuel Cabral'
 EMAIL = 'cabral.manuel@yandex.com'
-DESCRIPTION = 'Obtención de datos sobre el COVID-19'
+DESCRIPTION = 'Obtención e información de datos sobre el COVID-19 en Argentina'
 LICENSE = 'apache-2.0'
 
 setup(
@@ -20,8 +20,8 @@ setup(
   author = AUTHOR,
   author_email = EMAIL,
   url = 'https://github.com/manucabral/Codavi',
-  keywords = ['python', 'covid', 'covid-19', 'covid-argentina', 'covid-data'],
-  install_requires = ['requests'],
+  keywords = ['python', 'covid', 'covid-19', 'covid19-data', 'covid19-argentina'],
+  install_requires = ['requests', 'pandas'],
   python_requires = '>= 3.9',
   classifiers=[
     'Development Status :: 3 - Alpha',

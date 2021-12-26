@@ -7,7 +7,7 @@
 URLS = {
     'ar': {
         'llamadas_107': 'https://cdn.buenosaires.gob.ar/datosabiertos/datasets/salud/llamados-107-covid/llamados_107_covid.csv',
-        'vacunas_aplicadas': {
+        'dosis': {
             'acumulado': {
                 'primera': 'https://sisa.msal.gov.ar/datos/descargas/covid-19/files/covid_1raDosis_acumulado.csv',
                 'segunda': 'https://sisa.msal.gov.ar/datos/descargas/covid-19/files/covid_2daDosis_acumulado.csv',
@@ -19,6 +19,7 @@ URLS = {
                 'total': 'https://sisa.msal.gov.ar/datos/descargas/covid-19/files/covid_total_diario.csv'
             }
         },
+        'vacunas' : 'https://sisa.msal.gov.ar/datos/descargas/covid-19/files/Covid19VacunasAgrupadas.csv.zip',
         'casos': 'https://raw.githubusercontent.com/manucabral/Codavi/main/reportes/'
     },
     'chl': {
@@ -36,6 +37,13 @@ FILTROS = {
         'm': 2,
         'f': 3,
         'todos': 1
+    },
+    'dosis': {
+        'unica': 'dosis_unica_cantidad',
+        'primera':  'primera_dosis_cantidad',
+        'segunda': 'segunda_dosis_cantidad',
+        'adicional': 'dosis_adicional_cantidad',
+        'refuerzo': 'dosis_refuerzo_cantidad'
     }
 }
 
