@@ -21,9 +21,14 @@ confirmados_femeninos = filtro.query('sexo == "F"').count()[0]
 fallecidos_masculinos = filtro.query('fallecido == "SI" and sexo == "M"').count()[0]
 fallecidos_femeninos = filtro.query('fallecido == "SI" and sexo == "F"').count()[0]
 
-print('>> Generando el archivo de reporte..')
-with open(f'{hoy}.csv', 'w') as f:
-    f.write('fecha,total_confirmados,confirmados_masculinos,confirmados_femeninos,total_fallecidos,fallecidos_masculinos,fallecidos_femeninos\n')
-    f.write(f'{hoy},{total_confirmados},{confirmados_masculinos},{confirmados_femeninos},{total_fallecidos},{fallecidos_masculinos},{fallecidos_femeninos}')
+print('>> Generando reporte de casos..')
+with open('casos.csv', 'a') as f:
+    f.write(f'{hoy},{total_confirmados},{confirmados_masculinos},{confirmados_femeninos}\n')
     f.close()
-print('>> Reporte terminado.')
+print('>> Reporte de casos finalizado.')
+
+print('>> Generando reporte de fallecidos..')
+with open('fallecidos.csv', 'a') as f:
+    f.write(f'{hoy},{total_fallecidos},{fallecidos_masculinos},{fallecidos_femeninos}\n')
+    f.close()
+print('>> Reporte de fallecidos finalizado.')

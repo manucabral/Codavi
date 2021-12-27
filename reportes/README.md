@@ -1,15 +1,9 @@
 # Codavi Reportes
 Registro de reportes diarios sobre el COVID-19 desde la fecha `21/12/2021`
 
-## Campos disponibles
-En cada reporte se almacenan los siguientes campos
-- `fecha`
-- `total_confirmados`
-- `confirmados_masculinos`
-- `confirmados_femeninos`
-- `total_fallecidos`
-- `fallecidos_masculinos`
-- `fallecidos_femeninos`
+## Reportes disponibles
+- `confirmados`: total, masculino y femenino de manera acumulada.
+- `fallecidos`: total, masculino y femenino de manera acumulada.
 
 Los valores se almacenan en un **archivo de valores separados por comas** (`.csv`)
 

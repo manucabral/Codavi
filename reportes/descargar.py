@@ -18,5 +18,3 @@ except Exception as e:
     print('> Ocurrio un error al descargar el archivo.', e)
 
 print(f'> {ARCHIVO} descargado correctamente en el directorio')
-
-#"C:\Program Files\7-Zip\7z.exe" e "Covid19Casos.zip"
