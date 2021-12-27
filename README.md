@@ -19,12 +19,12 @@
 
 ## Contiene
 - [API](https://github.com/manucabral/Codavi/tree/main/api)
-- [Whatsapp Bot](https://github.com/manucabral/Codavi/tree/main/bot/whatsapp)
-- [Discord Bot](https://github.com/manucabral/Codavi/tree/main/bot/discord)
-- [Python Package](https://github.com/manucabral/Codavi/tree/main/package)
-- [Reportes](https://github.com/manucabral/Codavi/tree/main/reportes)
-- [Página web](https://codavi-web.vercel.app/)
-
+- [Bot de Whatsapp](https://github.com/manucabral/Codavi/tree/main/bot/whatsapp)
+- [Bot de Discord](https://github.com/manucabral/Codavi/tree/main/bot/discord)
+- [Paquete de Python](https://github.com/manucabral/Codavi/tree/main/package)
+- [Reportes diarios](https://github.com/manucabral/Codavi/tree/main/reportes)
+- [Página web](https://codavi-web.vercel.app/) ***fuera de servicio***
+ 
 ## Codavi en otros paises
 Codavi se extiende en otros países los cuales son
   - [Codavi Chile](https://github.com/leo1q/Codavi-CL)
@@ -33,3 +33,6 @@ Codavi se extiende en otros países los cuales son
 ## Fuente de datos
 Todos los análisis, obtención y comparativas estan basados de los datos que provee el gobierno Argentino sobre el virus, estos datos lo puedes descargar [aquí](https://datos.gob.ar/).
 Los datos son actualizados diariamente por el mismo gobierno del país.
+
+## Contribuciones
+Si tienes alguna contribución, reporte o arreglo de bugs, mejoras en la documentación o en el código fuente eres bienvenido y aceptado para colaborar con Codavi.
