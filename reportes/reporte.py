@@ -1,25 +1,11 @@
-from urllib.request import urlopen
+"""
+    Este programa analiza el archivo de casos sobre el COVID-19 ortogado por la Dirección Nacional de Epidemiología y Análisis de Situación de Salud.
+    Referencia: https://datos.gob.ar/dataset/salud-covid-19-casos-registrados-republica-argentina
+"""
+
 from datetime import datetime
-import zipfile, shutil, os, pandas as pd
+import os, pandas as pd
 
-URL_DATASET = 'https://sisa.msal.gov.ar/datos/descargas/covid-19/files/'
-CASOS_ARCHIVO = 'Covid19Casos'
-
-def descargarArchivo(nombreArchivo):
-    comprimido = nombreArchivo + '.zip'
-    csv = nombreArchivo + '.csv'
-    print('> Iniciando descarga del archivo', comprimido)
-    with urlopen(URL_DATASET + comprimido) as respuesta, open(comprimido, 'wb') as salida:
-        print('>> Copiando', comprimido, 'en el directorio..')
-        shutil.copyfileobj(respuesta, salida)
-        print('>> Extrayendo', csv, 'del archivo comprimido..')
-        with zipfile.ZipFile(comprimido) as archivoComprimido:
-            archivoComprimido.extract(csv)
-    print('>> Eliminando', comprimido, 'del directorio..')
-    os.remove(comprimido)
-    return print('> Archivo', csv, 'descargado correctamente en el directorio.')
-
-descargarArchivo(CASOS_ARCHIVO)
 print('>> Analizando los datos..')
 hoy = datetime.now().strftime('%Y-%m-%d')
 data = pd.read_csv('./Covid19Casos.csv', usecols = ['clasificacion_resumen', 'fallecido', 'sexo'])
