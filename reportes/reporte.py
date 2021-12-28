@@ -22,7 +22,7 @@ fallecidos_masculinos = filtro.query('fallecido == "SI" and sexo == "M"').count(
 fallecidos_femeninos = filtro.query('fallecido == "SI" and sexo == "F"').count()[0]
 
 print('>> Generando reporte de casos..')
-with open('casos.csv', 'a') as f:
+with open('confirmados.csv', 'a') as f:
     f.write(f'{hoy},{total_confirmados},{confirmados_masculinos},{confirmados_femeninos}\n')
     f.close()
 print('>> Reporte de casos finalizado.')
