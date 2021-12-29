@@ -49,21 +49,25 @@ class Codavi:
         :treturn: ['fecha', 'cantidad']
         """
 
-        if not sexo.lower() in FILTROS['fallecidos'].keys():
+        if not sexo.lower() in FILTROS['sexo'].keys():
             raise SexoDesconocido()
-        if not fecha:
-            fecha = self.__fecha_actual()
-        try:
-            res = self.__request(URLS['ar']['casos'] + fecha + '.csv')
-        except DatosNoActualizados as err:
-            print(err)
-            return
-        datos = res.splitlines()[1].split(',')
-        fecha = datos[0]
-        cantidad = datos[FILTROS['fallecidos'][sexo.lower()]]
-        return [fecha, cantidad]
+        res = self.__request(URLS['ar']['fallecidos'])
+        csv = reader(res.splitlines())
+        lista = list(csv)
 
-    def confirmados(self, sexo: str = 'todos', fecha: str = None):
+        if not fecha:
+            if not sexo:
+                return lista[-1]
+            datos = lista[-1]
+            return [datos[0], datos[FILTROS['sexo'][sexo.lower()]]]
+        if not fecha in res:
+            raise FechaNoEncontrada()
+        else:
+            for linea in lista:
+                if fecha in linea:
+                    return [fecha, linea[FILTROS['sexo'][sexo.lower()]]]
+
+    def confirmados(self, sexo: str = 'todos', fecha: str = None) -> ['fecha', 'cantidad']:
         """
         Cantidad de casos confirmados en Argentina de manera acumulada.
 
@@ -73,19 +77,23 @@ class Codavi:
         :treturn: ['fecha', 'cantidad']
         """
 
-        if not sexo.lower() in FILTROS['confirmados'].keys():
+        if not sexo.lower() in FILTROS['sexo'].keys():
             raise SexoDesconocido()
+        res = self.__request(URLS['ar']['confirmados'])
+        csv = reader(res.splitlines())
+        lista = list(csv)
+
         if not fecha:
-            fecha = self.__fecha_actual()
-        try:
-            res = self.__request(URLS['ar']['casos'] + fecha + '.csv')
-        except DatosNoActualizados as err:
-            print(err)
-            return
-        datos = res.splitlines()[1].split(',')
-        fecha = datos[0]
-        cantidad = datos[FILTROS['confirmados'][sexo.lower()]]
-        return [fecha, cantidad]
+            if not sexo:
+                return lista[-1]
+            datos = lista[-1]
+            return [datos[0], datos[FILTROS['sexo'][sexo.lower()]]]
+        if not fecha in res:
+            raise FechaNoEncontrada()
+        else:
+            for linea in lista:
+                if fecha in linea:
+                    return [fecha, linea[FILTROS['sexo'][sexo.lower()]]]
 
     def llamadas_107(self, acumulado: bool = False, fecha: str = None) -> ['fecha', 'cantidad']:
         """

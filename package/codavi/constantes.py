@@ -19,8 +19,9 @@ URLS = {
                 'total': 'https://sisa.msal.gov.ar/datos/descargas/covid-19/files/covid_total_diario.csv'
             }
         },
+        'confirmados': 'https://raw.githubusercontent.com/manucabral/Codavi/main/reportes/confirmados.csv',
+        'fallecidos': 'https://raw.githubusercontent.com/manucabral/Codavi/main/reportes/fallecidos.csv',
         'vacunas' : 'https://sisa.msal.gov.ar/datos/descargas/covid-19/files/Covid19VacunasAgrupadas.csv.zip',
-        'casos': 'https://raw.githubusercontent.com/manucabral/Codavi/main/reportes/'
     },
     'chl': {
         'vacunas_aplicadas': 'https://raw.githubusercontent.com/MinCiencia/Datos-COVID19/master/output/producto76/vacunacion_t.csv'
@@ -28,12 +29,7 @@ URLS = {
 }
 
 FILTROS = {
-    'fallecidos': {
-        'm': 5,
-        'f': 6,
-        'todos': 4
-    },
-    'confirmados': {
+    'sexo': {
         'm': 2,
         'f': 3,
         'todos': 1

@@ -86,7 +86,7 @@ Devuelve la cantidad de casos confirmados de COVID-19 en toda la Argentina, si n
 >>> from codavi import Codavi
 >>> codavi = Codavi()
 >>> codavi.confirmados(fecha='2021-12-24', sexo='f')
-['2021-12-24', '2732664']
+['2021-12-24', '48362']
 ```
 
 <a name="fallecidos"></a>

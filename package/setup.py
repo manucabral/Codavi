@@ -3,7 +3,7 @@ from setuptools import setup
 with open('README.md', 'r', encoding="utf-8") as file:
     long_description = file.read()
 
-VERSION = '1.1'
+VERSION = '1.2'
 AUTHOR = 'Manuel Cabral'
 EMAIL = 'cabral.manuel@yandex.com'
 DESCRIPTION = 'Obtención e información de datos sobre el COVID-19 en Argentina'
