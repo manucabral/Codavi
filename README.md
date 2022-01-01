@@ -23,7 +23,7 @@
 - [Bot de Discord](https://github.com/manucabral/Codavi/tree/main/bot/discord)
 - [Paquete de Python](https://github.com/manucabral/Codavi/tree/main/package)
 - [Reportes diarios](https://github.com/manucabral/Codavi/tree/main/reportes)
-- [Página web](https://codavi-web.vercel.app/) ***fuera de servicio***
+- [Página web](https://codavi-web.vercel.app/)
  
 ## Codavi en otros paises
 Codavi se extiende en otros países los cuales son
