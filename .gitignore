@@ -6,8 +6,10 @@ __pycache__/
 # C extensions
 *.so
 
+# Covid
 *.txt
 Covid19Casos.csv
+Covid19Casos.zip
 
 # Distribution / packaging
 .Python
