@@ -1,6 +1,7 @@
 # Codavi API
 Codavi ofrece una API para obtener los datos sobre las dosis aplicadas y casos registrados mediante generos.
 
+# Está API ya no tiene soporte, actualmente se está trabajando en una nueva.
 ## Instalación
 Clonar y ejecutar el archivo **api/wsgi.py**
 ```
