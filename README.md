@@ -15,24 +15,22 @@
   <a href="#"><img src="https://img.shields.io/github/contributors/manucabral/Codavi" alt="contributors"> </a>
 </div>
 
-**Codavi** es un servicio de código abierto que trata sobre la visualización y obtención de datos sobre el COVID-19 en toda la Argentina.
+**Codavi** is an open source project focused on the COVID-19 virus in Argentina.
 
-## Contiene
+## Contains
 - [API](https://github.com/manucabral/Codavi/tree/main/api)
-- [Bot de Whatsapp](https://github.com/manucabral/Codavi/tree/main/bot/whatsapp)
-- [Bot de Discord](https://github.com/manucabral/Codavi/tree/main/bot/discord)
-- [Paquete de Python](https://github.com/manucabral/Codavi/tree/main/package)
-- [Reportes diarios](https://github.com/manucabral/Codavi/tree/main/reportes)
-- [Página web](https://codavi-web.vercel.app/)
+- [Whatsapp Bot](https://github.com/manucabral/Codavi/tree/main/bot/whatsapp)
+- [Discord Bot](https://github.com/manucabral/Codavi/tree/main/bot/discord)
+- [Python Package](https://github.com/manucabral/Codavi/tree/main/package)
+- [Daily Reports](https://github.com/manucabral/Codavi/tree/main/reportes)
+- [Webpage](https://codavi-web.vercel.app/) (off)
  
-## Codavi en otros paises
-Codavi se extiende en otros países los cuales son
+## Codavi in other countries
   - [Codavi Chile](https://github.com/leo1q/Codavi-CL)
   - [Codavi Uruguay](https://github.com/nyashi/CODAVI-UY)
 
-## Fuente de datos
-Todos los análisis, obtención y comparativas estan basados de los datos que provee el gobierno Argentino sobre el virus, estos datos lo puedes descargar [aquí](https://datos.gob.ar/).
-Los datos son actualizados diariamente por el mismo gobierno del país.
+## Data source
+All the analysis and comparisons are based on the data provided from the Argentine government, this data can be downloaded [here](https://datos.gob.ar/).
 
 ## Contribuciones
-Si tienes alguna contribución, reporte o arreglo de bugs, mejoras en la documentación o en el código fuente eres bienvenido y aceptado para colaborar con Codavi.
+If you have any contribution, create a pull request.
