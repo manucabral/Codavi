@@ -19,8 +19,8 @@
 
 ## Contiene
 - [API](https://github.com/manucabral/Codavi/tree/main/api)
-- [Bot de Whatsapp](https://github.com/manucabral/Codavi/tree/main/bot/whatsapp)
-- [Bot de Discord](https://github.com/manucabral/Codavi/tree/main/bot/discord)
+- [Bot de Whatsapp](https://github.com/manucabral/Codavi/tree/main/bot/whatsapp) (en mantenimiento)
+- [Bot de Discord](https://github.com/manucabral/Codavi/tree/main/bot/discord) (en mantenimiento)
 - [Paquete de Python](https://github.com/manucabral/Codavi/tree/main/package)
 - [Reportes diarios](https://github.com/manucabral/Codavi/tree/main/reportes)
 - [Página web](https://codavi-web.vercel.app/)
