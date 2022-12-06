@@ -16,7 +16,7 @@
 </div>
 
 **Codavi** es un proyecto de código abierto que trata sobre la visualización y obtención de datos sobre el COVID-19 en toda la Argentina.
-
+> Nota: Codavi ya no se encuentra en desarrollo, muchas funcionalidades no estan disponibles.
 ## Contiene
 - [API](https://github.com/manucabral/Codavi/tree/main/api)
 - [Bot de Whatsapp](https://github.com/manucabral/Codavi/tree/main/bot/whatsapp) (en mantenimiento)
